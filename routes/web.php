@@ -19,3 +19,8 @@ Route::get('/', function () {
 Route::get('/login', function(){
     return view('login');
 });
+
+Route::resource('komentar', 'KomentarsController');
+Route::resource('users', 'UsersController');
+Route::resource('tempat_kos', 'KomentarsController');
+Route::resource('ratings', 'RatingsController');
