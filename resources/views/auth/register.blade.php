@@ -40,6 +40,39 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="telpon" class="col-md-4 col-form-label text-md-right">{{ __('Nomor telepon') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="telpon" type="text" class="form-control @error('telpon') is-invalid @enderror" name="telpon" value="{{ old('telpon') }}" required autocomplete="telpon">
+
+                                @error('telpon')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="status" class="col-md-4 col-form-label text-md-right">{{ __('Status') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="status" type="text" class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('status') }}" required autocomplete="status">
+
+                                @error('status')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-4"></div>
+                            <div class="col-md-6">Ketikan 1 jika anda pencari kos</div>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-6">Ketikan 2 jika anda pemilik kos</div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
