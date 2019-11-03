@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Komentar;
 
 class KomentarsController extends Controller
 {
@@ -13,6 +14,9 @@ class KomentarsController extends Controller
      */
     public function index()
     {
+        // return 'hello ckits';
+        $comments = Komentar::all();
+        return $comments;
         //
     }
 
