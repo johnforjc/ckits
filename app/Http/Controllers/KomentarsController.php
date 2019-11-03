@@ -28,6 +28,7 @@ class KomentarsController extends Controller
     public function create()
     {
         //
+        return view('tambahkomentar');
     }
 
     /**
@@ -38,7 +39,20 @@ class KomentarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //tinggal diubah
+        $this->validate($request, [
+            'name' => 'required',
+            'kamar' => ['required|gt:0'],
+            'detail' => 'required'
+            //dsb
+        ]);
+
+        $komentars = new TempatKos;
+        $komentars->nama_tempat_kos = $request->name;
+        $komentars->kamar_tersedia = $request->kamar;
+        $komentars->status_promosi = 0;
+        $komentars->keterangan_tempat_kos = $request->detail;
+        $komentars->store();
     }
 
     /**
@@ -50,6 +64,8 @@ class KomentarsController extends Controller
     public function show($id)
     {
         //
+        $komentar = Komentar::find($id);
+        return view('showDetailKomentar')->with('komentar', $komentar);
     }
 
     /**
@@ -61,6 +77,8 @@ class KomentarsController extends Controller
     public function edit($id)
     {
         //
+        $komentar = Komentar::find($id);
+        return view('editKomentar')->with('komentar', $komentar);
     }
 
     /**
@@ -84,5 +102,7 @@ class KomentarsController extends Controller
     public function destroy($id)
     {
         //
+        $komentar = TempatKos::find($id);
+        $komentar->delete();
     }
 }
