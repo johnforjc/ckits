@@ -15,6 +15,8 @@ class TempatKosController extends Controller
     public function index()
     {
         //
+        $kosts = TempatKos::all();
+        return view('listKost')->with('kosts', $kosts);
     }
 
     /**
@@ -25,6 +27,7 @@ class TempatKosController extends Controller
     public function create()
     {
         //
+        return view('tambahkos');
     }
 
     /**
@@ -35,6 +38,18 @@ class TempatKosController extends Controller
      */
     public function store(Request $request)
     {
+        // Ada validasi terlebih dahulu
+        $this->validate($request, [
+            'nama_tempat_kos' => 'required',
+            //dsb
+        ]);
+
+        $kosts = new TempatKos;
+        $kosts->nama_tempat_kos = $request->name;
+        $kosts->kamar_tersedia = $request->kamar;
+        $kosts->status_promosi = 0;
+        $kosts->keterangan_tempat_kos = $request->detail;
+        $kosts->store();
         //
     }
 
@@ -47,6 +62,8 @@ class TempatKosController extends Controller
     public function show($id)
     {
         //
+        $kosts = TempatKos::find($id);
+        return view('showDetail')->with('kosts', $kosts);
     }
 
     /**
@@ -58,6 +75,8 @@ class TempatKosController extends Controller
     public function edit($id)
     {
         //
+        $kosts = TempatKos::find($id);
+        return view('editTempatKos')->with('kosts', $kosts);
     }
 
     /**
@@ -81,5 +100,7 @@ class TempatKosController extends Controller
     public function destroy($id)
     {
         //
+        $kosts = TempatKos::find($id);
+        $kosts->delete();
     }
 }

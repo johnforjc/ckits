@@ -15,6 +15,8 @@ class RatingsController extends Controller
     public function index()
     {
         //
+        $ratings = Rating::all();
+        return $ratings;
     }
 
     /**
