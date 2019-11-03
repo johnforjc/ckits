@@ -40,7 +40,9 @@ class TempatKosController extends Controller
     {
         // Ada validasi terlebih dahulu
         $this->validate($request, [
-            'nama_tempat_kos' => 'required',
+            'name' => 'required',
+            'kamar' => ['required|gt:0'],
+            'detail' => 'required'
             //dsb
         ]);
 
