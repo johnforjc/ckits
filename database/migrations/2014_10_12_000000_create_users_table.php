@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('no_telp');
             $table->integer('status');
-            $table->date('updated_at');
-            $table->date('created_at');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
