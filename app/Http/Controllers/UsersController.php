@@ -14,7 +14,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('listUser')->with('users', $users);
     }
 
     /**
@@ -46,7 +47,8 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::find($id);
+        return view('profil')->with('users', $users);
     }
 
     /**
@@ -57,7 +59,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::find($id);
+        return view('editProfil')->with('users', $users);
     }
 
     /**
@@ -69,7 +72,19 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nama_user' => 'required',
+            'email' => 'required',
+            'no_telp' => 'required'
+        ]);
+        
+        $users = User::find($id);
+        $users->nama_user = $request->input('nama_user');
+        $users->email = $request->input('email');
+        $users->no_telp = $request->input('no_telp');
+        $users->save();
+
+        return redirect()->action('UsersController@show',  $id)->with('success', 'Users telah diupdate');
     }
 
     /**
@@ -80,6 +95,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect('users');
     }
 }
