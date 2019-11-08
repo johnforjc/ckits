@@ -170,9 +170,13 @@ sup {
 }
 
 a {
-  color: #3490dc;
+  color: #000000;
   text-decoration: none;
   background-color: transparent;
+}
+
+.btn a{
+  color: #fff;
 }
 
 a:hover {
