@@ -170,14 +170,14 @@ sup {
 }
 
 a {
-  color: #3490dc;
+  color: #000000;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
   color: #1d68a7;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 a:not([href]):not([tabindex]) {

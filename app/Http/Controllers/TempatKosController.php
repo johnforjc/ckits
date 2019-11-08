@@ -16,6 +16,7 @@ class TempatKosController extends Controller
     {
         //
         $kosts = TempatKos::all();
+        // return ($kosts);
         return view('listKost')->with('kosts', $kosts);
     }
 
@@ -27,7 +28,7 @@ class TempatKosController extends Controller
     public function create()
     {
         //
-        return view('tambahkos');
+        return view('createkost');
     }
 
     /**
@@ -38,20 +39,24 @@ class TempatKosController extends Controller
      */
     public function store(Request $request)
     {
+        return ("HALO");
         // Ada validasi terlebih dahulu
-        $this->validate($request, [
-            'name' => 'required',
-            'kamar' => ['required|gt:0'],
-            'detail' => 'required'
-            //dsb
-        ]);
+        // $this->validate($request, [
+        //     'name' => 'required',
+        //     'kamar' => ['required|gt:0'],
+        //     'detail' => 'required'
+        //     //dsb
+        // ]);
 
-        $kosts = new TempatKos;
-        $kosts->nama_tempat_kos = $request->name;
-        $kosts->kamar_tersedia = $request->kamar;
-        $kosts->status_promosi = 0;
-        $kosts->keterangan_tempat_kos = $request->detail;
-        $kosts->store();
+        // $kosts = new TempatKos;
+        // $kosts->nama_tempat_kos = $request->name;
+        // $kosts->kamar_tersedia = $request->kamar;
+        // $kosts->status_promosi = 0;
+        // $kosts->keterangan_tempat_kos = $request->detail;
+        // $kosts->store();
+
+        print('Masuk Govlok');
+        return ('Masuk Bos');
         //
     }
 
@@ -104,5 +109,6 @@ class TempatKosController extends Controller
         //
         $kosts = TempatKos::find($id);
         $kosts->delete();
+        return redirect('tempatkos');
     }
 }

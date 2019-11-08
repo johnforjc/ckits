@@ -21,7 +21,7 @@ Route::get('/login', function(){
 });
 
 Route::resource('komentar', 'KomentarsController');
-// Route::resource('users', 'UsersController');
+Route::resource('users', 'UsersController');
 Route::resource('tempatkos', 'TempatKosController');
 Route::resource('ratings', 'RatingsController');
 Auth::routes();
