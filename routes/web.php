@@ -23,7 +23,6 @@ Route::get('/login', function(){
 Route::resource('komentar', 'KomentarsController');
 Route::resource('users', 'UsersController');
 Route::resource('tempatkos', 'TempatKosController');
-Route::resource('ratings', 'RatingsController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
