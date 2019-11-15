@@ -13,5 +13,5 @@ class TempatKos extends Model
     public $primaryKey = 'id_tempat_kos';
 
     // Timestamps
-    public $timestamps = 'true';
+    public $timestamps = 'false';
 }

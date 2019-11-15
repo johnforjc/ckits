@@ -39,21 +39,36 @@ class TempatKosController extends Controller
      */
     public function store(Request $request)
     {
-        return ("HALO");
+        // return ("HALO");
         // Ada validasi terlebih dahulu
-        // $this->validate($request, [
-        //     'name' => 'required',
-        //     'kamar' => ['required|gt:0'],
-        //     'detail' => 'required'
-        //     //dsb
-        // ]);
+        $this->validate($request, [
+            'name' => 'required',
+            'kamar' => 'required|gt:0',
+            'keterangan' => 'required',
+            'alamat' => 'required',
+            'foto' => 'image|required|max:1999'
+            //dsb
+        ]);
 
-        // $kosts = new TempatKos;
-        // $kosts->nama_tempat_kos = $request->name;
-        // $kosts->kamar_tersedia = $request->kamar;
-        // $kosts->status_promosi = 0;
-        // $kosts->keterangan_tempat_kos = $request->detail;
-        // $kosts->store();
+        // Handle File Upload
+        if($request->hasFile('foto')){
+            $filenameWithExt = $request->file('foto');
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('foto')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('foto')->storeAs('/public/image', $fileNameToStore);
+        } else{
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+        $kosts = new TempatKos;
+        $kosts->nama_tempat_kos = $request->input('name');
+        $kosts->alamat = $request->input('alamat');
+        $kosts->kamar_tersedia = $request->input('kamar');
+        $kosts->status_promosi = $request->input('status');
+        $kosts->keterangan_tempat_kos = $request->input('keterangan');
+        $kosts->foto_kos = $fileNameToStore;
+        $kosts->save();
 
         print('Masuk Govlok');
         return ('Masuk Bos');
