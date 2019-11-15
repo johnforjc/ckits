@@ -16,6 +16,10 @@ Route::get('/', function () {
     // return "welcome";
 });
 
+Route::get('/syaratketentuan', function(){
+    return view('syaratdanketentuan');
+});
+
 Route::get('/login', function(){
     return view('login');
 });
