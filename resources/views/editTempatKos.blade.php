@@ -9,7 +9,7 @@
                 <div class="card-header">{{ __('Edit Profil Tempat Kos') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ action('TempatKosController@update', $kosts->id) }}">
+                    <form method="POST" action="{{ action('TempatKosController@update', $kosts->id_tempat_kos) }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group row">
@@ -40,7 +40,7 @@
                         <label for="keterangan" class="col-md-4 col-form-label text-md-right">{{ __('Keterangan') }}</label>
 
                         <div class="col-md-6">
-                            <input id="keterangan" type="text" class="form-control" name="keterangan" value="{{ $kosts->keterangan }}" required autocomplete="keterangan">
+                            <input id="keterangan" type="text" class="form-control" name="keterangan" value="{{ $kosts->keterangan_tempat_kos }}" required autocomplete="keterangan">
                         </div>
                     </div>
 
@@ -48,9 +48,11 @@
                         <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
 
                         <div class="col-md-4 btn">
-                            <input id="foto" type="file" name="foto" value="{{ $kosts->foto_kos }}" required>
+                            <input id="foto" type="file" name="foto" value="{{ $kosts->foto_kos }}">
                         </div>
                     </div>
+
+                    <input type="hidden" name="status" value="{{ $kosts->status_promosi }}">
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

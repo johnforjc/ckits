@@ -115,7 +115,6 @@ class TempatKosController extends Controller
             'kamar' => 'required|gt:0',
             'keterangan' => 'required',
             'alamat' => 'required',
-            'foto' => 'image|required|max:1999'
             //dsb
         ]);
 
@@ -126,8 +125,6 @@ class TempatKosController extends Controller
             $extension = $request->file('foto')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
             $path = $request->file('foto')->storeAs('/public/image', $fileNameToStore);
-        } else{
-            $fileNameToStore = 'noimage.jpg';
         }
 
         $kosts = TempatKos::find($id);
@@ -136,10 +133,12 @@ class TempatKosController extends Controller
         $kosts->kamar_tersedia = $request->input('kamar');
         $kosts->status_promosi = $request->input('status');
         $kosts->keterangan_tempat_kos = $request->input('keterangan');
-        $kosts->foto_kos = $fileNameToStore;
+        if($request->hasFile('foto')){
+            $kosts->foto_kos = $fileNameToStore;
+        }
         $kosts->save();
 
-        return('showTempatKos')->with('kosts', $kosts);
+        return view('showTempatKos')->with('kosts', $kosts);
     }
 
     /**
