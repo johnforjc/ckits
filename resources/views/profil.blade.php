@@ -39,7 +39,7 @@
             <span style="float:right">
                 <a href="/users">
                     <button class="btn btn-primary">
-                        {{ __('Back') }}
+                        {{ __('List User') }}
                     </button>
                 </a>
             </span>
