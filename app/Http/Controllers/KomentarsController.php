@@ -16,7 +16,7 @@ class KomentarsController extends Controller
     {
         // return 'hello ckits';
         $comments = Komentar::all();
-        return $comments;
+        return view('listComment')->$comments;
         //
     }
 
@@ -27,7 +27,6 @@ class KomentarsController extends Controller
      */
     public function create()
     {
-        //
         return view('tambahkomentar');
     }
 
@@ -52,7 +51,7 @@ class KomentarsController extends Controller
         $komentars->kamar_tersedia = $request->kamar;
         $komentars->status_promosi = 0;
         $komentars->keterangan_tempat_kos = $request->detail;
-        $komentars->store();
+        $komentars->save();
     }
 
     /**
