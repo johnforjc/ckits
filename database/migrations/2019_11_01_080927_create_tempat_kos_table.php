@@ -20,6 +20,8 @@ class CreateTempatKosTable extends Migration
             $table->integer('kamar_tersedia');
             $table->boolean('status_promosi');
             $table->string('keterangan_tempat_kos');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
