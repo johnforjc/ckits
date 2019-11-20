@@ -50,11 +50,11 @@ class KomentarsController extends Controller
             //dsb
         ]);
 
-        $komentars = new TempatKos;
-        $komentars->nama_tempat_kos = $request->name;
-        $komentars->kamar_tersedia = $request->kamar;
-        $komentars->status_promosi = 0;
-        $komentars->keterangan_tempat_kos = $request->detail;
+        $komentars = new Komentar;
+        $komentars->id = $request->id_user;
+        $komentars->id_kos = $request->id_kos;
+        $komentars->isi_komentar = $request->komentar;
+        $komentars->rating = $request->rating;
         $komentars->save();
 
     }
@@ -95,6 +95,17 @@ class KomentarsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'komentar' => 'required',
+            'rating' => 'required|gt:0|lt:6',
+            //dsb
+        ]);
+
+        $komentars = Komentar::find($id);
+        $komentars->isi_komentar = $request->komentar;
+        $komentars->rating = $request->rating;
+        $komentars->save();
+
     }
 
     /**
