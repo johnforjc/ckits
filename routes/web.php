@@ -25,6 +25,7 @@ Route::get('/login', function(){
 });
 
 Route::get('komentar/create/{id_kos}', 'KomentarsController@create_manual');
+// Route::get('tempatkos/list/{maxjarak}', 'TempatKosController@clustering');
 
 Route::resource('komentar', 'KomentarsController');
 Route::resource('users', 'UsersController');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TempatKos;
+use App\Komentar;
 
 class TempatKosController extends Controller
 {
@@ -16,6 +17,14 @@ class TempatKosController extends Controller
     {
         //
         $kosts = TempatKos::all();
+        // return ($kosts);
+        return view('listKost')->with('kosts', $kosts);
+    }
+
+    public function clustering()
+    {
+        //
+        $kosts = TempatKos::where();
         // return ($kosts);
         return view('listKost')->with('kosts', $kosts);
     }
@@ -84,6 +93,10 @@ class TempatKosController extends Controller
     {
         //
         $kosts = TempatKos::find($id);
+
+        // // Cara 2 model
+        // $komentar = Komentar::where('id_tempat_kos', $id)->get();
+        // return $komentar;
         return view('showTempatKos')->with('kosts', $kosts);
     }
 
