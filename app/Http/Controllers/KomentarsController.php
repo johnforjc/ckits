@@ -25,6 +25,11 @@ class KomentarsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function create_manual($id_kos)
+    {
+        return view('tambahkomentar')->with('id_kos', $id_kos);
+    }
+
     public function create()
     {
         return view('tambahkomentar');
@@ -40,9 +45,8 @@ class KomentarsController extends Controller
     {
         //tinggal diubah
         $this->validate($request, [
-            'name' => 'required',
-            'kamar' => ['required|gt:0'],
-            'detail' => 'required'
+            'komentar' => 'required',
+            'rating' => 'required|gt:0|lt:6',
             //dsb
         ]);
 
@@ -52,6 +56,7 @@ class KomentarsController extends Controller
         $komentars->status_promosi = 0;
         $komentars->keterangan_tempat_kos = $request->detail;
         $komentars->save();
+
     }
 
     /**

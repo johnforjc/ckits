@@ -24,6 +24,8 @@ Route::get('/login', function(){
     return view('login');
 });
 
+Route::get('komentar/create/{id_kos}', 'KomentarsController@create_manual');
+
 Route::resource('komentar', 'KomentarsController');
 Route::resource('users', 'UsersController');
 Route::resource('tempatkos', 'TempatKosController');
