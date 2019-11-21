@@ -4,15 +4,15 @@
 
 @if(Auth::guest())
     <script type="text/javascript">
-        window.location = "/home";
+        window.location = "/";
     </script>
-@endif
 
-@if (Auth::user()->id != $users->id && Auth::user()->status != '0')
+@elseif (Auth::user()->id != $users->id && Auth::user()->status != '0')
     <script type="text/javascript">
         window.location = "/";
     </script>
 @endif
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -34,9 +34,9 @@
                         <label class="col-md-5 col-form-label">Status User</label>
                         <label class="col-md-5 col-form-label">
                         @if ($users->status == '1')
-                            : Pencari Kos
+                            : Pencari Tempat Kos
                         @elseif ($users->status == '2')
-                            : Pemilik Kos
+                            : Pemilik Tempat Kos
                         @else
                             : Admin
                         @endif

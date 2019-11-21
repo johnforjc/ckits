@@ -4,10 +4,15 @@
 
 @if(Auth::guest())
     <script type="text/javascript">
-        window.location = "/home";
+        window.location = "/";
     </script>
 @endif
 
+@if (Auth::user()->id != $kosts->id && Auth::user()->status != '0')
+    <script type="text/javascript">
+        window.location = "/";
+    </script>
+@endif
 
 <h1 style="text-align:center">Edit Profil Tempat Kos</h1>
 <div class="container">

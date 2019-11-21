@@ -4,7 +4,7 @@
 
 @if(Auth::guest())
     <script type="text/javascript">
-        window.location = "/home";
+        window.location = "/";
     </script>
 @endif
 
@@ -66,6 +66,7 @@
                             </div>
                         </div>
 
+                        <input type="hidden" name="id" value="{{Auth::user()->id}}">
                         <input type="hidden" name="status" value="0">
 
                         <div class="form-group row mb-0">
