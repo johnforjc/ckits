@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
         <h1 style="text-align:center">Profil Tempat Kos</h1>
-        <div class="card-body col-md-8">
+        <div class="card-body">
             <div class="form-group row">
                 <label class="col-md-5 col-form-label">Nama Tempat Kos</label>
                 <label class="col-md-5 col-form-label">: {{$kosts->nama_tempat_kos}}</label>
@@ -17,6 +17,10 @@
             <div class="form-group row">
                 <label class="col-md-5 col-form-label">Jumlah Kamar</label>
                 <label class="col-md-5 col-form-label">: {{$kosts->kamar_tersedia}}</label>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label">Harga</label>
+                <label class="col-md-5 col-form-label">: {{$kosts->harga}}</label>
             </div>
             @if(Auth::user()->status=='2')
             <div class="form-group row">

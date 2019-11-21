@@ -17,7 +17,7 @@
             <td class="td">{{$kost->kamar_tersedia}}</td>
             <td class="td">{{$kost->harga}}</td>
             <td class="td">{{$kost->keterangan_tempat_kos}}</td>
-            <td class="td"><img src="/storage/image/{{$kost->foto_kos}}" alt="{{$kost->nama_tempat_kos}}"></td>
+            <td class="td"><img src="/storage/image/{{$kost->foto_kos}}" alt="{{$kost->nama_tempat_kos}}" height="400" weight="400"></td>
         </tr>                   
     @endforeach
 </table>

@@ -48,11 +48,11 @@ class TempatKosController extends Controller
      */
     public function store(Request $request)
     {
-        // return ("HALO");
         // Ada validasi terlebih dahulu
         $this->validate($request, [
             'name' => 'required',
             'kamar' => 'required|gt:0',
+            'harga' => 'required|gt:0',
             'keterangan' => 'required',
             'alamat' => 'required',
             'foto' => 'image|required|max:1999'
@@ -74,6 +74,7 @@ class TempatKosController extends Controller
         $kosts->nama_tempat_kos = $request->input('name');
         $kosts->alamat = $request->input('alamat');
         $kosts->kamar_tersedia = $request->input('kamar');
+        $kosts->harga = $request->input('harga');
         $kosts->status_promosi = $request->input('status');
         $kosts->keterangan_tempat_kos = $request->input('keterangan');
         $kosts->foto_kos = $fileNameToStore;
@@ -126,6 +127,7 @@ class TempatKosController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'kamar' => 'required|gt:0',
+            'harga' => 'required|gt:0',
             'keterangan' => 'required',
             'alamat' => 'required',
             //dsb
@@ -144,6 +146,7 @@ class TempatKosController extends Controller
         $kosts->nama_tempat_kos = $request->input('name');
         $kosts->alamat = $request->input('alamat');
         $kosts->kamar_tersedia = $request->input('kamar');
+        $kosts->harga = $request->input('harga');
         $kosts->status_promosi = $request->input('status');
         $kosts->keterangan_tempat_kos = $request->input('keterangan');
         if($request->hasFile('foto')){
