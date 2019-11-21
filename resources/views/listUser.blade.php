@@ -6,7 +6,6 @@
     <script type="text/javascript">
         window.location = "/";
     </script>
-
 @elseif (Auth::user()->status != '0')
     <script type="text/javascript">
         window.location = "/";
