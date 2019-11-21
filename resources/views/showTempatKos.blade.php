@@ -6,8 +6,7 @@
     <script type="text/javascript">
         window.location = "/";
     </script>
-@endif
-
+@else
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -46,15 +45,19 @@
             <div class="form-group row mb-0">
                 @if(Auth::user()->id == $kosts->id)
                     <div class="col-md-5 offset-md-5">
-                        <button class="btn btn-primary">
-                            <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">{{ __('Edit Tempat Kos') }}</a>
-                        </button>
+                        <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
+                            <button class="btn btn-primary">
+                                {{ __('Edit Tempat Kos') }}
+                            </button>
+                        </a>
                     </div>
                 @elseif(Auth::user()->id == $kosts->id)
-                <div class="col-md-5 offset-md-5">
-                        <button class="btn btn-primary">
-                            <a href="/komentar/create/{{$kosts->id_tempat_kos}}">{{ __('Beri Komentar') }}</a>
-                        </button>
+                    <div class="col-md-5 offset-md-5">
+                        <a href="/komentar/create/{{$kosts->id_tempat_kos}}">
+                            <button class="btn btn-primary">
+                                {{ __('Beri Komentar') }}
+                            </button>
+                        </a>
                     </div>
                 @endif
             </div>
@@ -85,4 +88,6 @@
         </div>
     </div>
 </div>
+@endif
+
 @endsection

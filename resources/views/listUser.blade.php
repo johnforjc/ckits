@@ -10,8 +10,8 @@
     <script type="text/javascript">
         window.location = "/";
     </script>
-@endif
 
+@else
 <h1 style="text-align:center">List User</h1>
     <table class="table">
         <tr class="tr">
@@ -47,4 +47,5 @@
             </tr>
         @endforeach
     </table>
+@endif
 @endsection

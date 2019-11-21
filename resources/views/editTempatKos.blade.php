@@ -6,14 +6,13 @@
     <script type="text/javascript">
         window.location = "/";
     </script>
-@endif
 
-@if (Auth::user()->id != $kosts->id && Auth::user()->status != '0')
+@elseif (Auth::user()->id != $kosts->id && Auth::user()->status != '0')
     <script type="text/javascript">
         window.location = "/";
     </script>
-@endif
 
+@else
 <h1 style="text-align:center">Edit Profil Tempat Kos</h1>
 <div class="container">
     <div class="row justify-content-center">
@@ -73,6 +72,7 @@
                         </div>
                     </div>
 
+                    <input type="hidden" name="id" value="{{Auth::user()->id}}">
                     <input type="hidden" name="status" value="{{ $kosts->status_promosi }}">
 
                         <div class="form-group row mb-0">
@@ -89,4 +89,5 @@
         </div>
     </div>
 </div>
+@endif
 @endsection

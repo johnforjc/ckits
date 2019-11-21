@@ -5,12 +5,13 @@
     <script type="text/javascript">
         window.location = "/";
     </script>
+
 @elseif (Auth::user()->id != $users->id && Auth::user()->status != '0')
     <script type="text/javascript">
         window.location = "/";
     </script>
-@endif
 
+@else
 <h1 style="text-align:center">Edit Profil User</h1>
 <div class="container">
     <div class="row justify-content-center">
@@ -60,4 +61,5 @@
         </div>
     </div>
 </div>
+@endif
 @endsection

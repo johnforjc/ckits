@@ -6,8 +6,8 @@
     <script type="text/javascript">
         window.location = "/home";
     </script>
-@endif
 
+@else
 <table class="table">
     <tr class="tr">
         <th class="th">Komentar</th>
@@ -20,5 +20,5 @@
         </tr>                   
     @endforeach
 </table>
-
+@endif
 @endsection

@@ -160,6 +160,7 @@ class TempatKosController extends Controller
         }
 
         $kosts = TempatKos::find($id);
+        $kosts->id = $request->input('id');
         $kosts->nama_tempat_kos = $request->input('name');
         $kosts->alamat = $request->input('alamat');
         $kosts->kamar_tersedia = $request->input('kamar');

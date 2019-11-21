@@ -54,10 +54,15 @@ body {
 }
 
 .list-box-photo{
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: auto;
 }
 
 .list-box-text{
     margin:2px 0px;
 }
+
+a .list-box{
+    color: #000;
+}
+
