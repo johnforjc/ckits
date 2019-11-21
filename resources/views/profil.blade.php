@@ -4,7 +4,7 @@
 
 @if (Auth::user()->id != $users->id && Auth::user()->status != '0')
     <script type="text/javascript">
-        window.location = "/home";
+        window.location = "/";
     </script>
 @endif
 <div class="container">

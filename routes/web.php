@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-    // return "welcome";
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/syaratketentuan', function(){
     return view('syaratdanketentuan');
@@ -30,10 +27,6 @@ Route::get('komentar/create/{id_kos}', 'KomentarsController@create_manual');
 Route::resource('komentar', 'KomentarsController');
 Route::resource('users', 'UsersController');
 Route::resource('tempatkos', 'TempatKosController');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');

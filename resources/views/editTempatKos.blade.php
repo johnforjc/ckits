@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <h1 style="text-align:center">Edit Profil Tempat Kos</h1>
 <div class="container">
     <div class="row justify-content-center">
