@@ -3,7 +3,7 @@
 @section('content')
 @if(Auth::guest())
     <script type="text/javascript">
-        window.location = "/home";
+        window.location = "/";
     </script>
 @elseif (Auth::user()->id != $users->id && Auth::user()->status != '0')
     <script type="text/javascript">

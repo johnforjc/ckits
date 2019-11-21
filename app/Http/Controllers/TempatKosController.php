@@ -72,6 +72,7 @@ class TempatKosController extends Controller
         }
 
         $kosts = new TempatKos;
+        $kosts->id = $request->input('id');
         $kosts->nama_tempat_kos = $request->input('name');
         $kosts->alamat = $request->input('alamat');
         $kosts->kamar_tersedia = $request->input('kamar');
@@ -95,7 +96,7 @@ class TempatKosController extends Controller
     {
         //
         $kosts = TempatKos::find($id);
-        // $users = User::all();
+        $users = User::find($kosts->id);
         // $users->komentar::where('tempat_kos_id_tempat_kos', $id)->get(); 
         // return $users;
 
@@ -112,7 +113,7 @@ class TempatKosController extends Controller
         // // Cara 2 model
         // $komentar = Komentar::where('tempat_kos_id_tempat_kos', $id)->get();
         // return $komentar;
-        return view('showTempatKos')->with('kosts', $kosts)->with('data', $data);
+        return view('showTempatKos')->with('kosts', $kosts)->with('data', $data)->with('users', $users);
         // ->with('komentar', $komentar);
         // return view('showTempatKos')->with('data', ['kosts' => $kosts, 'komentar' => $komentar]);
     }

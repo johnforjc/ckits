@@ -2,11 +2,15 @@
 
 @section('content')
 
-@if(Auth::guest())
-    <script type="text/javascript">
-        window.location = "/home";
-    </script>
-@endif
+<table class="table">
+    <tr class="tr">
+        <th class="th">Nama Kos</th>
+        <th class="th">Alamat Kos</th>
+        <th class="th">Jumlah Kamar</th>
+        <th class="th">Harga</th>
+        <th class="th">Keterangan</th>
+        <th class="th">Foto</th>
+    </tr>
     @foreach ($kosts as $kost)   
         <div class="list-border">
             <div class="list-box">

@@ -4,7 +4,7 @@
 
 @if(Auth::guest())
     <script type="text/javascript">
-        window.location = "/home";
+        window.location = "/";
     </script>
 @endif
 
@@ -18,6 +18,10 @@
                 <label class="col-md-5 col-form-label">: {{$kosts->nama_tempat_kos}}</label>
             </div>
             <div class="form-group row">
+                <label class="col-md-5 col-form-label">Nama Pemilik Tempat Kos</label>
+                <label class="col-md-5 col-form-label">: {{$users->nama_user}}</label>
+            </div>
+            <div class="form-group row">
                 <label class="col-md-5 col-form-label">Alamat</label>
                 <label class="col-md-5 col-form-label">: {{$kosts->alamat}}</label>
             </div>
@@ -29,7 +33,7 @@
                 <label class="col-md-5 col-form-label">Harga</label>
                 <label class="col-md-5 col-form-label">: {{$kosts->harga}}</label>
             </div>
-            @if(Auth::user()->status=='2')
+            @if(Auth::user()->id == $kosts->id)
             <div class="form-group row">
                 <label class="col-md-5 col-form-label">Status Promosi</label>
                 <label class="col-md-5 col-form-label">: {{$kosts->status_promosi}}</label>
@@ -40,13 +44,13 @@
                 <label class="col-md-5 col-form-label">: {{$kosts->keterangan_tempat_kos}}</label>
             </div>
             <div class="form-group row mb-0">
-                @if(Auth::user()->status=='2')
+                @if(Auth::user()->id == $kosts->id)
                     <div class="col-md-5 offset-md-5">
                         <button class="btn btn-primary">
                             <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">{{ __('Edit Tempat Kos') }}</a>
                         </button>
                     </div>
-                @elseif(Auth::user()->status=='1')
+                @elseif(Auth::user()->id == $kosts->id)
                 <div class="col-md-5 offset-md-5">
                         <button class="btn btn-primary">
                             <a href="/komentar/create/{{$kosts->id_tempat_kos}}">{{ __('Beri Komentar') }}</a>
