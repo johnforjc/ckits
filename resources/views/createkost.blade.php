@@ -36,6 +36,14 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="harga" class="col-md-4 col-form-label text-md-right">{{ __('Harga') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="harga" type="text" class="form-control" name="harga" value="{{ old('harga') }}" required autocomplete="harga">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="keterangan" class="col-md-4 col-form-label text-md-right">{{ __('Keterangan') }}</label>
 
                             <div class="col-md-6">
