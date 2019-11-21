@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('content')
+
+<p>
 Syarat dan Ketentuan
 
 Disarankan sebelum mengakses Situs ini lebih jauh, Anda terlebih dahulu membaca dan memahami syarat dan ketentuan yang berlaku. Syarat dan ketentuan berikut adalah ketentuan dalam pengunjungan Situs, isi dan/atau konten, layanan, serta fitur lainnya yang ada di www.cermati.com. Dengan mengakses atau menggunakan Situs www.cermati.com, informasi, atau aplikasi lainnya dalam bentuk mobile application yang disediakan oleh atau dalam Situs, berarti Anda telah memahami dan menyetujui serta terikat dan tunduk dengan segala syarat dan ketentuan yang berlaku di Situs ini.
@@ -133,3 +138,6 @@ Selain menampilkan informasi produk-produk finansial dan/atau keuangan, asuransi
 9.3. Jika Anda masih memerlukan jawaban atas pertanyaan yang tidak terdapat dalam Syarat dan Ketentuan ini, Anda dapat menghubungi Kami di email cs@cermati.com atau menghubungi kami di nomor 021-2950 8800.
 
 9.4. Selain itu Anda juga dapat membaca Frequently Asked Question (FAQ) yang telah kami siapkan untuk menjawab seputar pertanyaan-pertanyaan umum.
+</p>
+
+@endsection
