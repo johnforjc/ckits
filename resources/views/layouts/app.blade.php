@@ -62,8 +62,10 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/users/{{ Auth::user()->id }}">{{ __('Profil') }}</a>
-                                    @if ( Auth::user()->status == '2')
+                                    @if (Auth::user()->status == '2')
                                         <a class="dropdown-item" href="/tempatkos/create">{{ __('Daftar Tempat Kos') }}</a>
+                                    @elseif (Auth::user()->status == '0')
+                                        <a class="dropdown-item" href="/users">{{ __('List User') }}</a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
