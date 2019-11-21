@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if(Auth::guest())
+    <script type="text/javascript">
+        window.location = "/home";
+    </script>
+@endif
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

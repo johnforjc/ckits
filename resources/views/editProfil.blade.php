@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Auth::guest())
+    <script type="text/javascript">
+        window.location = "/home";
+    </script>
+@endif
 
 @if (Auth::user()->id != $users->id && Auth::user()->status != '0')
     <script type="text/javascript">

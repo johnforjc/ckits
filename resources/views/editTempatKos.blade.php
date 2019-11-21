@@ -2,6 +2,13 @@
 
 @section('content')
 
+@if(Auth::guest())
+    <script type="text/javascript">
+        window.location = "/home";
+    </script>
+@endif
+
+
 <h1 style="text-align:center">Edit Profil Tempat Kos</h1>
 <div class="container">
     <div class="row justify-content-center">
