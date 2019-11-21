@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TempatKos;
+use App\User;
 use App\Komentar;
 
 class TempatKosController extends Controller
@@ -93,11 +94,26 @@ class TempatKosController extends Controller
     {
         //
         $kosts = TempatKos::find($id);
+        // $users = User::all();
+        // $users->komentar::where('tempat_kos_id_tempat_kos', $id)->get(); 
+        // return $users;
+
+        //cara fandi
+        $komentar = Komentar::where('tempat_kos_id_tempat_kos', $id)->get();
+        $data = array();
+        for($i=0; $i<$komentar->count(); $i++)
+        {
+            array_push($data, User::find($komentar[$i]->id));
+        }
+        // return $komentar;
+        // return $data;
 
         // // Cara 2 model
-        // $komentar = Komentar::where('id_tempat_kos', $id)->get();
+        // $komentar = Komentar::where('tempat_kos_id_tempat_kos', $id)->get();
         // return $komentar;
-        return view('showTempatKos')->with('kosts', $kosts);
+        return view('showTempatKos')->with('kosts', $kosts)->with('data', $data);
+        // ->with('komentar', $komentar);
+        // return view('showTempatKos')->with('data', ['kosts' => $kosts, 'komentar' => $komentar]);
     }
 
     /**

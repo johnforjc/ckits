@@ -14,4 +14,8 @@ class TempatKos extends Model
 
     // Timestamps
     public $timestamps = 'false';
+
+    public function komentar(){
+        return $this->hasMany('App\Komentar');
+    }
 }

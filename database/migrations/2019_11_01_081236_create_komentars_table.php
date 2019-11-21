@@ -16,11 +16,11 @@ class CreateKomentarsTable extends Migration
         Schema::create('komentars', function (Blueprint $table) {
             $table->increments('id_komentar');
             $table->integer('id')->unsigned();
-            $table->integer('id_tempat_kos')->unsigned();
+            $table->integer('tempat_kos_id_tempat_kos')->unsigned();
             $table->string('isi_komentar');
             $table->integer('rating')->unsigned;
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_tempat_kos')->references('id_tempat_kos')->on('tempat_kos')->onDelete('cascade');
+            $table->foreign('tempat_kos_id_tempat_kos')->references('id_tempat_kos')->on('tempat_kos')->onDelete('cascade');
             $table->timestamps();
         });
     }

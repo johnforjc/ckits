@@ -14,4 +14,12 @@ class Komentar extends Model
 
     // Timestamps
     public $timestamps = 'true';
+
+    public function tempatkos(){
+        return $this->belongsTo('App\TempatKos');
+    }
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }
