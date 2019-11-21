@@ -40,13 +40,6 @@
                 <label class="col-md-5 col-form-label">: {{$kosts->keterangan_tempat_kos}}</label>
             </div>
             <div class="form-group row mb-0">
-            @if(Auth::user()->status=='2')
-                <div class="col-md-5 offset-md-5">
-                    <button class="btn btn-primary">
-                        <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">{{ __('Edit Tempat Kos') }}</a>
-                    </button>
-                </div>
-                <div class="form-group row mb-0">
                 @if(Auth::user()->status=='2')
                     <div class="col-md-5 offset-md-5">
                         <button class="btn btn-primary">
