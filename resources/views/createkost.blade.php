@@ -68,6 +68,8 @@
 
                         <input type="hidden" name="id" value="{{Auth::user()->id}}">
                         <input type="hidden" name="status" value="0">
+                        <input type="hidden" name="rating" value="0">
+                        <input type="hidden" name="jumlah" value="0">
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">

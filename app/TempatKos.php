@@ -18,4 +18,8 @@ class TempatKos extends Model
     public function komentar(){
         return $this->hasMany('App\Komentar');
     }
+
+    public function User(){
+        return $this->belongTo('App\User');
+    }
 }

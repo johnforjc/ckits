@@ -53,6 +53,11 @@ class KomentarsController extends Controller
             //dsb
         ]);
 
+        $kost = TempatKos::find($request->id_kost);
+        $kost->rating = ($kost->rating*$kost->jumlah_komentar+$request->rating)/($kost->jumlah_komentar+1);
+        $kost->jumlah_komentar=$kost->jumlah_komentar+1;
+        $kost->save();
+
         $komentars = new Komentar;
         $komentars->id = $request->id_user;
         $komentars->tempat_kos_id_tempat_kos = $request->id_kost;
@@ -106,7 +111,12 @@ class KomentarsController extends Controller
             //dsb
         ]);
 
+        $kost = TempatKos::find($request->id_kost);
         $komentars = Komentar::find($id);
+
+        $kost->rating = ($kost->rating*$kost->jumlah_komentar+($komentars->rating-$request->rating))/($kost->jumlah_komentar);
+        $kost->save();
+
         $komentars->isi_komentar = $request->komentar;
         $komentars->rating = $request->rating;
         $komentars->save();
