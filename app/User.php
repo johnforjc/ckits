@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function komentar(){
         return $this->hasMany('App\Komentar');
     }
+
+    public function tempatKos(){
+        return $this->hasMany('App\TempatKos');
+    }
 }

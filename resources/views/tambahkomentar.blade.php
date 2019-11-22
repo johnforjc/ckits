@@ -6,7 +6,7 @@
     <script type="text/javascript">
         window.location = "/home";
     </script>
-@elseif(Auth::user()->id == $kosts->id)
+@elseif(Auth::user()->id == $kost->id)
     <script type="text/javascript">
         window.location = "/home";
     </script>
@@ -44,7 +44,7 @@
                         </div>
                         
                         <input type="hidden" name="id_user" value="{{Auth::user()->id}}">
-                        <input type="hidden" name="id_kost" value="{{$id_kos}}">
+                        <input type="hidden" name="id_kost" value="{{$kost->id_tempat_kos}}">
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

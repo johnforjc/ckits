@@ -80,10 +80,13 @@ class TempatKosController extends Controller
         $kosts->status_promosi = $request->input('status');
         $kosts->keterangan_tempat_kos = $request->input('keterangan');
         $kosts->foto_kos = $fileNameToStore;
+        $kosts->rating = $request->rating;
+        $kosts->jumlah_komentar = $request->jumlah;
         $kosts->save();
 
         //
-        return view('showTempatKos')->with('kosts', $kosts);
+        return redirect()->route('tempatkos.show', $kosts->id_tempat_kos);
+        // return view('showTempatKos')->with('kosts', $kosts);
     }
 
     /**
@@ -172,7 +175,7 @@ class TempatKosController extends Controller
         }
         $kosts->save();
 
-        return view('showTempatKos')->with('kosts', $kosts);
+        return redirect()->route('tempatkos.show', $kosts->id_tempat_kos);
     }
 
     /**

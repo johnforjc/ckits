@@ -52,7 +52,7 @@
                             </button>
                         </a>
                     </div>
-                    <div class="col-md-5 offset-md-5">
+                    <div class="col-md-5">
                         <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
                             <button class="btn btn-primary">
                                 {{ __('Edit Tempat Kos') }}
