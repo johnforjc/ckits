@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Komentar;
+use App\TempatKos;
+use App\User;
 
 class KomentarsController extends Controller
 {
@@ -27,7 +29,8 @@ class KomentarsController extends Controller
      */
     public function create_manual($id_kos)
     {
-        return view('tambahkomentar')->with('id_kos', $id_kos);
+        $kost=TempatKos::find($id_kos);
+        return view('tambahkomentar')->with('kost', $kost);
     }
 
     public function create()
@@ -46,17 +49,19 @@ class KomentarsController extends Controller
         //tinggal diubah
         $this->validate($request, [
             'komentar' => 'required',
-            'rating' => 'required|gt:0|lt:6',
+            'rating' => 'required',
             //dsb
         ]);
 
         $komentars = new Komentar;
         $komentars->id = $request->id_user;
-        $komentars->id_kos = $request->id_kos;
+        $komentars->tempat_kos_id_tempat_kos = $request->id_kost;
         $komentars->isi_komentar = $request->komentar;
         $komentars->rating = $request->rating;
         $komentars->save();
 
+        // return 0;
+        return redirect('tempatkos');
     }
 
     /**
@@ -97,7 +102,7 @@ class KomentarsController extends Controller
         //
         $this->validate($request, [
             'komentar' => 'required',
-            'rating' => 'required|gt:0|lt:6',
+            'rating' => 'required',
             //dsb
         ]);
 
@@ -106,6 +111,7 @@ class KomentarsController extends Controller
         $komentars->rating = $request->rating;
         $komentars->save();
 
+        return redirect('tempatkos');
     }
 
     /**

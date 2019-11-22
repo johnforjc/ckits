@@ -12,7 +12,7 @@
         <div class="col-md-8">
         <h1 style="text-align:center">Profil Tempat Kos</h1>
         <div class="card-body template-kost">
-            <img class="template-kos-image" src="/storage/image/{{$kost->foto_kos}}">
+            <img class="template-kos-image" src="/storage/image/{{$kosts->foto_kos}}">
             <div class="form-group row">
                 <label class="col-md-5 col-form-label">Nama Tempat Kos</label>
                 <label class="col-md-5 col-form-label">: {{$kosts->nama_tempat_kos}}</label>
