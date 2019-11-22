@@ -23,28 +23,35 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> -->
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('css/freelancer.min.css')}}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
 </head>
 <body id="page-top">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div class="divnavbar">
+    <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" id="mainNav"> -->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 CKITS
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+            <!-- <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
+            </button> -->
+
+            <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
+                {{--<ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('list') }}">{{ __('Tempat Kos') }}</a>
                     </li>
-                </ul>
+                </ul>--}}
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
@@ -87,7 +94,7 @@
             </div>
         </div>
     </nav>
-
+    </div>
     <main class="py-4">
         @yield('content')
     </main>

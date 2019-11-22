@@ -11,7 +11,7 @@ body {
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.6;
-    color: #212529;
+    color: #f6fbff;
     text-align: left;
     /* background-color: #d2fafb; */
 
@@ -47,6 +47,23 @@ body {
     margin-top: 60px;
 }
 
+.divnavbar {
+    padding-bottom: 5rem;
+}
+
+nav a:hover {
+    color:#2C3E50 !important;
+}
+
+.portfolio-item{
+    background-color:#357376;
+}
+
+.portfolio-item a{
+    color: #f6fbff;
+    text-decoration: none;
+}
+
 .list-border{
     color: #fff ;
     /* color: #000; */
@@ -71,7 +88,7 @@ body {
 }
 
 .list-box-text{
-    margin:2px 0px 0px 0px;
+    margin:2px 10px 1px 10px;
 }
 
 a .list-box{
