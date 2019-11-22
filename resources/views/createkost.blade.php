@@ -69,6 +69,18 @@
                         <input type="hidden" name="id" value="{{Auth::user()->id}}">
                         <input type="hidden" name="status" value="0">
 
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="syarat" id="syarat" required>
+
+                                    <a href="/syaratketentuan">
+                                        {{ __('Saya menyetujui syarat dan ketentuan') }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary" method="_POST">

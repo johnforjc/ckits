@@ -19,6 +19,10 @@ body {
     /* color: #000 ; */
 }
 
+p {
+    text-align: justify;
+}
+
 .right {
     margin-right: 10%;
 }
@@ -47,6 +51,15 @@ body {
     margin-top: 60px;
 }
 
+.card {
+    color: #101010;
+}
+
+.card div.card-header{
+    text-align: center;
+    font-size: 26px;
+}
+
 .divnavbar {
     padding-bottom: 5rem;
 }
@@ -64,6 +77,11 @@ nav a:hover {
     text-decoration: none;
 }
 
+.portfolio-item .list-box-photo {
+    width: 500px;
+    height: 250px;
+}
+
 .list-border{
     color: #fff ;
     /* color: #000; */
@@ -78,7 +96,7 @@ nav a:hover {
     margin: 10px 10px 0px 10px;
     display: inline-block;
     padding:10px;
-    background-color: #1ABC9C;
+    background-color: #357376;
     box-shadow: 4px 4px #1B3D36;
 }
 
@@ -99,7 +117,7 @@ a .list-box{
     border-radius: 10px;
     /* font-size: 25px; */
     padding: 40px;
-    background-color: #1ABC9C;
+    background-color: #357376;
     box-shadow: 4px 4px #1B3D36;
 }
 
@@ -116,7 +134,7 @@ a .list-box{
     font-size: 20px;
     margin:5px 20px 5px 20px;
     border-radius:20px;
-    background-color: #117A65;
+    background-color: #357376;
     box-shadow: 2px 2px #138A72;
 }
 

@@ -53,7 +53,8 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'status' => ['required', 'gt:0', 'lt:3'],       // Coba
-            'telpon' => ['required']       // Coba
+            'telpon' => ['required'],
+            'syarat' => ['required']       // Coba
         ]);
     }
 

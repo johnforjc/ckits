@@ -56,7 +56,8 @@ class TempatKosController extends Controller
             'harga' => 'required|gt:0',
             'keterangan' => 'required',
             'alamat' => 'required',
-            'foto' => 'image|required|max:1999'
+            'foto' => 'image|required|max:1999',
+            'syarat' => 'required'
             //dsb
         ]);
 
@@ -83,7 +84,8 @@ class TempatKosController extends Controller
         $kosts->save();
 
         //
-        return view('showTempatKos')->with('kosts', $kosts);
+        $users = User::find($kosts->id);
+        return view('showTempatKos')->with('kosts', $kosts)->with('users', $users);
     }
 
     /**
@@ -171,8 +173,16 @@ class TempatKosController extends Controller
             $kosts->foto_kos = $fileNameToStore;
         }
         $kosts->save();
+        $users = User::find($kosts->id);
 
-        return view('showTempatKos')->with('kosts', $kosts);
+        $komentar = Komentar::where('tempat_kos_id_tempat_kos', $id)->get();
+        $data = array();
+        for($i=0; $i<$komentar->count(); $i++)
+        {
+            array_push($data, User::find($komentar[$i]->id));
+        }
+
+        return view('showTempatKos')->with('kosts', $kosts)->with('data', $data)->with('users', $users);
     }
 
     /**

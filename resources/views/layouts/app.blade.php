@@ -79,6 +79,7 @@
                                 @elseif (Auth::user()->status == '0')
                                     <a class="dropdown-item" href="/users">{{ __('List User') }}</a>
                                 @endif
+                                <a class="dropdown-item" href="/list">{{ __('List Tempat Kos') }}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
