@@ -80,16 +80,17 @@ a .list-box{
 
 .template-kost{
     border-radius: 10px;
-    font-size: 25px;
+    /* font-size: 25px; */
     padding: 40px;
     background-color: #1ABC9C;
     box-shadow: 4px 4px #1B3D36;
 }
 
 .template-kos-image{
-    float: right;
-    height: 400px;
-    width: auto;
+    /* float: right; */
+    padding:0px !important;
+    margin:0px !important;
+    height: auto;
     box-shadow: 2px 2px #117A65;
 }
 
