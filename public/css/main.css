@@ -144,3 +144,16 @@ a .list-box{
 {
     opacity: 1;
 }
+
+.rating .output{
+    content: '\f005';
+    font-family: fontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 30px;
+    color: #FFDF00;
+    top: 0;
+    opacity: 0;
+    transition: .2s;
+    text-shadow: 0 2px 5px  rgba(0,0,0,0.5);
+}
