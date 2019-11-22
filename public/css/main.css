@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Alatsi|Merriweather|Nunito+Sans&display=swap');
 
+.bg-primary{background-color: #2C3E50 !important;}
+.bg-secondary{background-color: #1ABC9C !important;}
+.black-font{color: #000 !important;}
+.white-font{color:#fff !important;}
+
 body {
     margin: 0;
     font-family: "Nunito Sans", sans-serif;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.6;
-    color: #212529;
+    /* color: #212529; */
     text-align: left;
-    background-color: #d2fafb;
+    /* background-color: #d2fafb; */
+
+    background-color: #2C3E50;
+    color: #fff ;
 }
 
 .right {
@@ -40,17 +48,21 @@ body {
 }
 
 .list-border{
-    color: #000;
+    color: #fff ;
+    /* color: #000; */
     size:20px;
     margin:20px 20px;
     padding:5px;
 }
 
 .list-border .list-box{
+    border-radius: 10px;
+    padding: 5px;
     margin: 10px 10px 0px 10px;
     display: inline-block;
     padding:10px;
-    background-color: #41aaa8;
+    background-color: #1ABC9C;
+    box-shadow: 4px 4px #1B3D36;
 }
 
 .list-box-photo{
@@ -59,10 +71,33 @@ body {
 }
 
 .list-box-text{
-    margin:2px 0px;
+    margin:2px 0px 0px 0px;
 }
 
 a .list-box{
-    color: #000;
+    color: #fff;
 }
 
+.template-kost{
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 40px;
+    background-color: #1ABC9C;
+    box-shadow: 4px 4px #1B3D36;
+}
+
+.template-kos-image{
+    float: right;
+    height: 400px;
+    width: auto;
+    box-shadow: 2px 2px #117A65;
+}
+
+.list-komentar-row{
+    padding : 10px;
+    font-size: 20px;
+    margin:5px 20px 5px 20px;
+    border-radius:20px;
+    background-color: #117A65;
+    box-shadow: 2px 2px #138A72;
+}

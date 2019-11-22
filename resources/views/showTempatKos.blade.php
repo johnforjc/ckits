@@ -11,7 +11,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
         <h1 style="text-align:center">Profil Tempat Kos</h1>
-        <div class="card-body">
+        <div class="card-body template-kost">
+            <img class="template-kos-image" src="/storage/image/{{$kost->foto_kos}}">
             <div class="form-group row">
                 <label class="col-md-5 col-form-label">Nama Tempat Kos</label>
                 <label class="col-md-5 col-form-label">: {{$kosts->nama_tempat_kos}}</label>
@@ -44,6 +45,13 @@
             </div>
             <div class="form-group row mb-0">
                 @if(Auth::user()->id == $kosts->id)
+                    <div class="col-md-5">
+                        <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
+                            <button class="btn btn-primary">
+                                {{ __('Promosikan Tempat Kos Anda') }}
+                            </button>
+                        </a>
+                    </div>
                     <div class="col-md-5 offset-md-5">
                         <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
                             <button class="btn btn-primary">
@@ -63,21 +71,21 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h2 style="text-align:center">Komentar</h2>
             <div class="card-body col-md-8">
                 @if($kosts->komentar->count() > 0)
                     @for($i=0; $i<$kosts->komentar->count(); $i++)
+                    <div class="list-komentar-row">
                         <div class="form-group row">
                             <label class="col-md-5 col-form-label">{{$data[$i]['nama_user']}}</label>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-5 col-form-label">{{$kosts->komentar[$i]['isi_komentar']}}</label>
                         </div>
+                    </div>    
                     @endfor
                 @else
                 <div class="form-group row">
@@ -88,6 +96,8 @@
         </div>
     </div>
 </div>
+    
+
 @endif
 
 @endsection
