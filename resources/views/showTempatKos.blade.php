@@ -59,7 +59,7 @@
                             </button>
                         </a>
                     </div>
-                @elseif(Auth::user()->id == $kosts->id)
+                @elseif(Auth::user()->status == 1)
                     <div class="col-md-5 offset-md-5">
                         <a href="/komentar/create/{{$kosts->id_tempat_kos}}">
                             <button class="btn btn-primary">
