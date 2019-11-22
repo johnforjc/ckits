@@ -6,7 +6,10 @@
     <script type="text/javascript">
         window.location = "/";
     </script>
-
+@elseif(Auth::user()->status==1)
+    <script type="text/javascript">
+        window.location = "/";
+    </script>
 @else
 <div class="container">
     <div class="row justify-content-center">

@@ -4,11 +4,11 @@
 
 @if(Auth::guest())
     <script type="text/javascript">
-        window.location = "/home";
+        window.location = "/";
     </script>
 @elseif(Auth::user()->id != $komentar->id)
     <script type="text/javascript">
-        window.location = "/home";
+        window.location = "/";
     </script>
 @else
 <div class="container">

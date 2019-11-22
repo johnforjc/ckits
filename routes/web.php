@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/tempatkos/list/{id_user}', 'TempatKosController@listpemilik');
 
 Route::get('/syaratketentuan', function(){
     return view('syaratdanketentuan');

@@ -22,6 +22,12 @@ class TempatKosController extends Controller
         return view('listKost')->with('kosts', $kosts);
     }
 
+    public function listpemilik($id)
+    {
+        $kosts = TempatKos::where('id', $id)->get();
+        return view('listKost')->with('kosts', $kosts);
+    }
+
     public function clustering()
     {
         //
