@@ -50,6 +50,7 @@ class KomentarsController extends Controller
         $this->validate($request, [
             'komentar' => 'required',
             'rating' => 'required',
+            'syarat' => 'required'
             //dsb
         ]);
 
@@ -65,8 +66,7 @@ class KomentarsController extends Controller
         $komentars->rating = $request->rating;
         $komentars->save();
 
-        // return 0;
-        return redirect('tempatkos');
+        return redirect()->route('tempatkos.show', $komentars->tempat_kos_id_tempat_kos);    
     }
 
     /**
@@ -121,8 +121,8 @@ class KomentarsController extends Controller
         $komentars->rating = $request->rating;
         $komentars->save();
 
-        return redirect('tempatkos');
-    }
+        return redirect()->route('tempatkos.show', $komentars->tempat_kos_id_tempat_kos); 
+}
 
     /**
      * Remove the specified resource from storage.
