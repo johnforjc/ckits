@@ -81,6 +81,7 @@
                     <div class="list-komentar-row">
                         <div class="form-group row">
                             <label class="col-md-5 col-form-label">{{$data[$i]['nama_user']}}</label>
+                            <label class="col-md-5 col-form-label rating">{{$kosts->komentar[$i]['rating']}}<label class="output"></label></label>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-5 col-form-label">{{$kosts->komentar[$i]['isi_komentar']}}</label>
