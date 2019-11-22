@@ -11,12 +11,12 @@ body {
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.6;
-    /* color: #212529; */
+    color: #212529;
     text-align: left;
     /* background-color: #d2fafb; */
 
     background-color: #2C3E50;
-    color: #fff ;
+    /* color: #000 ; */
 }
 
 .right {
