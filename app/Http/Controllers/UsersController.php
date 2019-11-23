@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Komentar;
+use App\TempatKos;
 
 class UsersController extends Controller
 {
@@ -96,6 +98,20 @@ class UsersController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+        $komentar = Komentar::where('id', $id)->get();
+        for($i=0; $i<$komentar->count(); $i++)
+        {
+            $kost = TempatKos::find($komentar[$i]->tempat_kos_id_tempat_kos);
+            $kost->jumlah_komentar=$kost->jumlah_komentar-1;
+            if($kost->jumlah_komentar == 0){
+                $kost->rating = 0;
+            }
+            else{
+                $kost->rating = ($kost->rating*($kost->jumlah_komentar+1)-$komentar[$i]->rating)/($kost->jumlah_komentar);
+            }
+            $kost->save();
+            $komentar[$i]->delete();
+        }
         $user->delete();
         return redirect('users');
     }

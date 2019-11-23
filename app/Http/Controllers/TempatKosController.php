@@ -210,6 +210,11 @@ class TempatKosController extends Controller
     {
         //
         $kosts = TempatKos::find($id);
+        $komentar = Komentar::where('tempat_kos_id_tempat_kos', $id)->get();
+        for($i=0; $i<$komentar->count(); $i++)
+        {
+            $komentar[$i]->delete();
+        }
         $kosts->delete();
         return redirect('tempatkos');
     }
