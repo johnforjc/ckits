@@ -16,7 +16,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1 style="text-align:center">Profil User</h1>
+            <h1>Profil User</h1>
                 <div class="card-body">
                     <div class="form-group row">
                         <label class="col-md-5 col-form-label">Nama User</label>

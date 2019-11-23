@@ -12,7 +12,7 @@
     </script>
 
 @else
-<h1 style="text-align:center">List Komentar</h1>
+<h1>List Komentar</h1>
 <table class="table">
     <tr class="tr">
         <th class="th">ID Penyewa Tempat Kos</th>

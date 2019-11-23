@@ -19,8 +19,19 @@ body {
     /* color: #000 ; */
 }
 
+h1 {
+    text-align: center;
+}
+
 p {
     text-align: justify;
+}
+
+.syarat {
+    font-weight: normal;
+    font-stretch: normal;
+    display: inline-block;
+    width: 30px;
 }
 
 .right {
