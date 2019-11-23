@@ -12,7 +12,7 @@
     </script>
 
 @else
-<h1 style="text-align:center">List User</h1>
+<h1>List User</h1>
 <table class="table">
     <tr class="tr">
         <th class="th">Nama User</th>
