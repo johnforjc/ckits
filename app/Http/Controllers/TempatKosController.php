@@ -24,7 +24,7 @@ class TempatKosController extends Controller
 
     public function listpemilik($id)
     {
-        $kosts = TempatKos::where('id', $id)->sortByDesc("status_promosi")->get();
+        $kosts = TempatKos::where('id', $id)->orderBy("status_promosi", "desc")->get();
         return view('listKost')->with('kosts', $kosts);
     }
 
@@ -38,7 +38,7 @@ class TempatKosController extends Controller
         $kosts = TempatKos::where([
                                     ['harga', '<=', $request->harga_max],
                                     ['rating', '>=', $request->rating_min]
-                                    ])->sortByDesc("status_promosi")->get();
+                                    ])->orderBy("status_promosi", "desc")->get();
         // return ($kosts);
         return view('listKost')->with('kosts', $kosts);
     }
