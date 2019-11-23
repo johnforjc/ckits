@@ -42,6 +42,7 @@
                     @endif
                     </label>
                 </div>
+                @if(Auth::user()->id == $users->id)
                 <div class="form-group row mb-0">
                     <div class="col-md-5"></div>
                     <div class="col-md-5">
@@ -54,6 +55,7 @@
                         </span>
                     </div>  
                 </div>
+                @endif
             </div>
         </div>
     </div>
