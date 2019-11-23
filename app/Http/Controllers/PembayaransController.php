@@ -91,7 +91,7 @@ class PembayaransController extends Controller
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('foto')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            $path = $request->file('foto')->storeAs('/public/image', $fileNameToStore);
+            $path = $request->file('foto')->storeAs('/public/validation', $fileNameToStore);
             $payment->foto = $fileNameToStore;
         }
 
