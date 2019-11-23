@@ -27,7 +27,7 @@ p {
     margin-right: 10%;
 }
 
-.th {
+.th, .td{
     text-align: center;
 }
 
@@ -86,7 +86,7 @@ nav a:hover {
     color: #fff ;
     /* color: #000; */
     size:20px;
-    margin:20px 20px;
+    margin:60px 50px;
     padding:5px;
 }
 
@@ -136,11 +136,19 @@ a .list-box{
 
 .list-komentar-row{
     padding : 10px;
-    font-size: 20px;
+    /* font-size: 20px; */
     margin:5px 20px 5px 20px;
     border-radius:20px;
     background-color: #357376;
     box-shadow: 2px 2px #138A72;
+}
+
+.table {
+    color: #f6fbff;
+}
+
+.table a{
+    color: #f6fbff;
 }
 
 .rating{
@@ -187,29 +195,87 @@ a .list-box{
 
 .bintang{
     position: relative;
-    /* transform: translate(-50%, -50%);  */
     display : flex;
-    flex-direction: row-reverse;
-    /* margin: 0px 0px 0px --25%; */
+    flex-direction: row;
 }
 
 .bintang label{
-    content: '\f005';
     display: block;
-    cursor: pointer;
-    width: 30px;
-    color: #FFDF00;
+    width: 40px;
+    height: auto;
 }
 
-/* .bintang .output{
+.bintang .output::before{
     content: '\f005';
     font-family: fontAwesome;
     position: absolute;
     display: block;
-    font-size: 30px;
+    font-size: 25px;
     color: #FFDF00;
-    /* top: 0; */
-    /* opacity: 0; */
-    /* transition: .2s; */
-    /* text-shadow: 0 2px 5px  rgba(0,0,0,0.5); */
-} */
+    padding-left: 0.3rem;
+    top: 0;
+    opacity: 1;
+    transition: .2s;
+    text-shadow: 0 2px 5px  rgba(0,0,0,0.5);
+}
+
+.search-box{
+    position: absolute;
+    /* top: 50%; */
+    left:50%;
+    transform: translate(-50%);
+    background-color: #2f3640;
+    height: 60px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+.search-txt:hover{
+    border-bottom-color: white;
+    border-bottom-width: 2px;
+}
+
+.search-box label{
+    color: white;
+    justify-content: center;
+    align-items:center;
+}
+
+.search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn{
+    background-color:white;
+}
+
+.search-btn{
+    content: '\f002';
+    font-family: fontAwesome;
+    color: #e84114;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    background:#2f3640;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-decoration: none;
+    transition: 0.5;
+}
+
+.search-txt, .search-box input{
+    border:hidden;
+    background: none;
+    outline: none;
+    float: left;
+    padding:0;
+    color: white;
+    font-size: 16px;
+    line-height: 40px;
+    transition:0.4s;
+    width: 0px;
+}
