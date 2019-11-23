@@ -73,18 +73,25 @@
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="komentarcontainer">
             <h2 style="text-align:center">Komentar</h2>
-            <div class="card-body col-md-8">
+            <div class="card-body">
                 @if($kosts->komentar->count() > 0)
                     @for($i=0; $i<$kosts->komentar->count(); $i++)
                     <div class="list-komentar-row">
                         <div class="form-group row">
-                            <label class="col-md-5 col-form-label">{{$data[$i]['nama_user']}}</label>
-                            <label class="col-md-5 col-form-label rating">{{$kosts->komentar[$i]['rating']}}<label class="output"></label></label>
+                            <label class="col-md-5 col-form-label">Nama</label>
+                            <label class="col-md-5 col-form-label">: {{$data[$i]['nama_user']}}</label>
                         </div>
                         <div class="form-group row">
-                            <label class="col-md-5 col-form-label">{{$kosts->komentar[$i]['isi_komentar']}}</label>
+                            <label class="col-md-5 col-form-label">Rating</label>
+                            <div class="col-md-5 col-form-label bintang">
+                                <label class="output"></label>{{$kosts->komentar[$i]['rating']}}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-5 col-form-label">Komentar</label>
+                            <label class="col-md-5 col-form-label">: {{$kosts->komentar[$i]['isi_komentar']}}</label>
                         </div>
                     </div>    
                     @endfor

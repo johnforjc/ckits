@@ -129,6 +129,11 @@ a .list-box{
     box-shadow: 2px 2px #117A65;
 }
 
+.komentarcontainer {
+    width: 500px;
+    height: auto;
+}
+
 .list-komentar-row{
     padding : 10px;
     font-size: 20px;
@@ -180,15 +185,31 @@ a .list-box{
     opacity: 1;
 }
 
-.rating .output{
+.bintang{
+    position: relative;
+    /* transform: translate(-50%, -50%);  */
+    display : flex;
+    flex-direction: row-reverse;
+    /* margin: 0px 0px 0px --25%; */
+}
+
+.bintang label{
+    content: '\f005';
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    color: #FFDF00;
+}
+
+/* .bintang .output{
     content: '\f005';
     font-family: fontAwesome;
     position: absolute;
     display: block;
     font-size: 30px;
     color: #FFDF00;
-    top: 0;
-    opacity: 0;
-    transition: .2s;
-    text-shadow: 0 2px 5px  rgba(0,0,0,0.5);
-}
+    /* top: 0; */
+    /* opacity: 0; */
+    /* transition: .2s; */
+    /* text-shadow: 0 2px 5px  rgba(0,0,0,0.5); */
+} */

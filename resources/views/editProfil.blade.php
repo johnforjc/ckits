@@ -18,7 +18,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Edit Profil Anda') }}</div>
-
+                
                 <div class="card-body">
                     <form method="POST" action="{{ action('UsersController@update', $users->id) }}">
                         @csrf
