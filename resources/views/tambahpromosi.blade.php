@@ -18,53 +18,21 @@
                 <div class="card-header">{{ __('Promosikan Tempat Kos Anda!') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ action('PembayaransController@create_manual') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ action('PembayaransController@store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama') }}</label>   
+                            <label for="promosi" class="col-md-4 col-form-label text-md-right">{{ __('Pilih jenis promosi anda') }}</label>   
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <div class="col-md-6" style="display:inline-block">
+                                <input type="radio" name="promosi" value="1"> 6 bulan hanya dengan Rp. 150000 <br>
+                                <input type="radio" name="promosi" value="2"> 12 bulan hanya dengan Rp. 250000 <br>
+                                <input type="radio" name="promosi" value="3"> 24 bulan hanya dengan Rp. 450000
                             </div>
+                            
                         </div>
 
-                        <div class="form-group row">
-                            <label for="kamar" class="col-md-4 col-form-label text-md-right">{{ __('Jumlah kamar') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="kamar" type="text" class="form-control" name="kamar" value="{{ old('kamar') }}" required autocomplete="kamar">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="harga" class="col-md-4 col-form-label text-md-right">{{ __('Harga') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="harga" type="text" class="form-control" name="harga" value="{{ old('harga') }}" required autocomplete="harga">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="keterangan" class="col-md-4 col-form-label text-md-right">{{ __('Keterangan') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="keterangan" type="text" class="form-control" name="keterangan" value="{{ old('keterangan') }}" required autocomplete="keterangan">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
-
-                            <div class="col-md-4 btn">
-                                <input id="foto" type="file" name="foto" value="{{ old('foto') }}" required>
-                            </div>
-                        </div>
-
-                        <input type="hidden" name="id" value="{{Auth::user()->id}}">
-                        <input type="hidden" name="status" value="0">
-                        <input type="hidden" name="rating" value="0">
-                        <input type="hidden" name="jumlah" value="0">
+                        <input type="hidden" class="form-control" name="id_kos" value="{{$kost->id_tempat_kos}}">
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">

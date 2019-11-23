@@ -30,6 +30,7 @@ Route::post('clus', 'TempatKosController@clustering');
 Route::resource('komentar', 'KomentarsController');
 Route::resource('users', 'UsersController');
 Route::resource('tempatkos', 'TempatKosController');
+Route::resource('pembayaran', 'PembayaransController');
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');

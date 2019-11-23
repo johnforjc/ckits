@@ -31,7 +31,11 @@
         <td class="td">{{$payment->valid}}</td>
         <td class="td">{{$payment->jenis_promosi}}</td>
         <td class="td">{{$payment->harga}}</td>
-        <td class="td">Foto</td>
+        <td class="td">
+            @if({{$payment->foto}} != "no_image.jpg")
+                <img src="/public/valid/{{$payment->foto}}" alt="">
+            @endif
+        </td>
         <td class="td">
             <form action="{{ action('TempatKosController@show', $payment->id_tempat_kos) }} " method="POST">
                 <input type="hidden" name="_method" value="Validasi">

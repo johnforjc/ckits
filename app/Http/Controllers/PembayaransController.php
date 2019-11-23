@@ -28,9 +28,15 @@ class PembayaransController extends Controller
      */
     public function create_manual($id_kos)
     {
+        // return $id_kos;
         $kost=TempatKos::find($id_kos);
-
+        // return $kost;
         return view('tambahpromosi')->with('kost', $kost);
+    }
+
+    public function create()
+    {
+        return view('tambahpromosi');
     }
     /**
      * Store a newly created resource in storage.
@@ -46,11 +52,16 @@ class PembayaransController extends Controller
         ]);
 
         $payment = new Pembayaran;
+        $payment->id_tempat_kos = $request->id_kos;
         $payment->valid=0;
         $payment->jenis_promosi = $request->promosi;
-        $payment->harga = $request->harga;
+        $payment->harga = 50000*$request->promosi*$request->promosi - 50000*$request->promosi +150000;
+        $payment->foto = "no_image.jpg";
+        $payment->save();
 
-        return view('Lakukan pembayaran')->with('payment', $payment);
+        $kost = TempatKos::find($request->id_kos);
+
+        return view('lakukanpembayaran')->with('payment', $payment)->with('kost', $kost);
     }
 
     /**
@@ -85,7 +96,9 @@ class PembayaransController extends Controller
     public function update(Request $request, $id)
     {
         //
+        // return $id;
         $payment = Pembayaran::find($id);
+        $kost=TempatKos::find($payment->id_tempat_kos);
 
         if($request->hasFile('foto')){
             $filenameWithExt = $request->file('foto');
@@ -99,16 +112,17 @@ class PembayaransController extends Controller
         if($request->valid == 1)
         {
             $payment->valid=1;
-            $kost=TempatKos::find($payment->id_tempat_kos);
             $mulai_berlaku = now();
             if($payment->jenis_promosi=1) $kost->expired_promotion = $mulai_berlaku->addDays(180);
             else if($payment->jenis_promosi=2) $kost->expired_promotion = $mulai_berlaku->addDays(360);
             else if($payment->jenis_promosi=3) $kost->expired_promotion = $mulai_berlaku->addDays(720);
-        }
 
+            $kost->status_promosi = $payment->jenis_promosi;
+        }
+        $kost->save();
         $payment->save();
 
-        return redirect()->route('tempatkos.show', $kosts->id_tempat_kos);
+        return redirect()->route('tempatkos.show', $kost->id_tempat_kos);
     }
 
     /**
