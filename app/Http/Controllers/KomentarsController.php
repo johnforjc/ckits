@@ -137,7 +137,17 @@ class KomentarsController extends Controller
     public function destroy($id)
     {
         //
-        $komentar = TempatKos::find($id);
+        $komentar = Komentar::find($id);
+        $kost = TempatKos::find($komentar->tempat_kos_id_tempat_kos);
+        $kost->jumlah_komentar=$kost->jumlah_komentar-1;
+        if($kost->jumlah_komentar == 0){
+            $kost->rating = 0;
+        }
+        else{
+            $kost->rating = ($kost->rating*($kost->jumlah_komentar+1)-$komentar->rating)/($kost->jumlah_komentar);
+        }
+        $kost->save();
         $komentar->delete();
+        return redirect('komentar');
     }
 }

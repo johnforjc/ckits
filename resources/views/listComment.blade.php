@@ -15,20 +15,27 @@
 <h1 style="text-align:center">List Komentar</h1>
 <table class="table">
     <tr class="tr">
-        <th class="th">Nama Penyewa Tempat Kos</th>
-        <th class="th">Nama Tempat Kos</th>
+        <th class="th">ID Penyewa Tempat Kos</th>
+        <th class="th">ID Tempat Kos</th>
         <th class="th">Rating</th>
         <th class="th">Komentar</th>
         <th class="th">Delete</th>
     </tr>
     @foreach ($comments as $comment)   
     <tr class="tr">
-        <td class="td"><a href="/users/{{ $users[$comment->id-1]->id }}">{{$users[$comment->id-1]->nama_user}}</a></td>
-        <td class="td"><a href="/tempatkos/{{ $kosts[$comment->tempat_kos_id_tempat_kos-1]->id_tempat_kos }}">{{$kosts[$comment->tempat_kos_id_tempat_kos-1]->nama_tempat_kos}}</a></td>
-        <td class="td"><label class="col-md-5 col-form-label bintang">
-                    <label class="output"></label>{{$comment->rating}}
-                </label></td>
+        <td class="td"><a href="/users/{{ $comment->id }}">{{$comment->id}}</a></td>
+        <td class="td"><a href="/tempatkos/{{ $comment->tempat_kos_id_tempat_kos }}">{{$comment->tempat_kos_id_tempat_kos}}</a></td>
+        <td class="td">{{$comment->rating}}</td>
         <td class="td">{{$comment->isi_komentar}}</td>
+        <td class="td">
+            <form action="{{ action('KomentarsController@destroy', $comment->id_komentar) }} " method="POST">
+                <input type="hidden" name="_method" value="Delete">
+                <button type="submit" class="btn btn-danger" value="Delete">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    {{ __('DELETE') }}
+                </button>
+            </form>
+        </td>
     </tr>                   
     @endforeach
 </table>

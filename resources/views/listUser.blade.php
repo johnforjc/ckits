@@ -39,7 +39,7 @@
             <form action="{{ action('UsersController@destroy', $user->id) }} " method="POST">
                 <input type="hidden" name="_method" value="Delete">
                 <button type="submit" class="btn btn-danger" value="Delete">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     {{ __('DELETE') }}
                 </button>
             </form>
