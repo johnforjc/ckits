@@ -28,10 +28,17 @@ class TempatKosController extends Controller
         return view('listKost')->with('kosts', $kosts);
     }
 
-    public function clustering()
+    public function clustering(Request $request)
     {
         //
-        $kosts = TempatKos::where();
+        // return $request->harga_max;
+
+        if(is_null($request->harga_max)) $request->harga_max=9999999;
+        if(is_null($request->rating_min)) $request->rating_min=0;
+        $kosts = TempatKos::where([
+                                    ['harga', '<=', $request->harga_max],
+                                    ['rating', '>=', $request->rating_min]
+                                    ])->get();
         // return ($kosts);
         return view('listKost')->with('kosts', $kosts);
     }
