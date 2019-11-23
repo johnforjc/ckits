@@ -24,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $kosts = TempatKos::all();
+        $kosts = TempatKos::all()->sortByDesc("status_promosi")->take(6);
+        // return $kosts;
         return view('home')->with('kosts', $kosts);
     }
 }

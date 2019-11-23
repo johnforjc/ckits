@@ -39,7 +39,7 @@
 
         <!-- Portfolio Item 1 -->
         @if($kosts->count() > 0)
-            @for($i=0; $i<$kosts->count(); $i++)
+        <!-- @for($i=0; $i<$kosts->count(); $i++)
                 @if($i > 5)
                     @break
                 @endif
@@ -61,7 +61,27 @@
                         </a>
                     </div>
                 </div>
-            @endfor
+            @endfor -->
+            @foreach ($kosts as $kost) 
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                        <a href="tempatkos/{{$kost->id_tempat_kos}}">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                          <div class="portfolio-item-caption-content text-center text-white">
+                              <img class="masthead-avatar mb-0" src="img/portfolio/arrow.png" alt="" style="width:100px">
+                          </div>
+                        </div>
+                        <img class='list-box-photo' src="/storage/image/{{$kost->foto_kos}}" alt="{{$kost->nama_tempat_kos}}">
+                        <div class="list-box-text">
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label">{{ __('Nama Kos') }}</label>   
+                                <label class="col-md-6 col-form-label">: {{$kost->nama_tempat_kos}}</label>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
         @endif
         <!-- /.row -->
 

@@ -17,14 +17,14 @@ class TempatKosController extends Controller
     public function index()
     {
         //
-        $kosts = TempatKos::all();
+        $kosts = TempatKos::all()->sortByDesc("status_promosi");
         // return ($kosts);
         return view('listKost')->with('kosts', $kosts);
     }
 
     public function listpemilik($id)
     {
-        $kosts = TempatKos::where('id', $id)->get();
+        $kosts = TempatKos::where('id', $id)->sortByDesc("status_promosi")->get();
         return view('listKost')->with('kosts', $kosts);
     }
 
@@ -38,7 +38,7 @@ class TempatKosController extends Controller
         $kosts = TempatKos::where([
                                     ['harga', '<=', $request->harga_max],
                                     ['rating', '>=', $request->rating_min]
-                                    ])->get();
+                                    ])->sortByDesc("status_promosi")->get();
         // return ($kosts);
         return view('listKost')->with('kosts', $kosts);
     }
