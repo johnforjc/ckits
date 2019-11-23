@@ -16,6 +16,9 @@ class CreatePembayaransTable extends Migration
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->increments('id_pembayaran');
             $table->integer('id_tempat_kos')->unsigned();
+            $table->integer('valid');
+            $table->integer('jenis_promosi');
+            $table->integer('harga');
             $table->foreign('id_tempat_kos')->references('id_tempat_kos')->on('tempat_kos')->onDelete('cascade');
             $table->timestamps();
         });
