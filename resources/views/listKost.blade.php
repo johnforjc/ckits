@@ -4,14 +4,22 @@
 
 <h1 style="text-align:center">List Tempat Kos</h1>
 
-<div class="search-box">
-    <input class="search-txt" type="text" placeholder="Harga Maksimum" name="harga_max">
-    <input class="search-txt" type="text" placeholder="Rating Minimum" name="rating_min">
-    <a href="#" class="search-btn">
-    &#xf002;
-        <!-- <i class="fas fa-search"></i> -->
-    </a>
-</div>
+
+<form method="POST" action="{{ action('TempatKosController@clustering') }}" enctype="multipart/form-data">
+    @csrf
+    <div class="search-box">
+        <input class="search-txt" type="text" placeholder="Harga Maksimum" name="harga_max">
+        <input class="search-txt" type="text" placeholder="Rating Minimum" name="rating_min">
+        <!-- <a action="{{ action('TempatKosController@clustering') }}" class="search-btn" type="submit" method="POST">
+            &#xf002;
+        </a> -->
+        <button type="submit" class="btn btn-primary search-btn">
+            &#xf002;
+        </button>
+    </div>
+    
+</form>
+
 
 <div class="list-border">
 @foreach ($kosts as $kost)  

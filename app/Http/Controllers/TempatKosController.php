@@ -17,21 +17,28 @@ class TempatKosController extends Controller
     public function index()
     {
         //
-        $kosts = TempatKos::all();
+        $kosts = TempatKos::all()->sortByDesc("status_promosi");
         // return ($kosts);
         return view('listKost')->with('kosts', $kosts);
     }
 
     public function listpemilik($id)
     {
-        $kosts = TempatKos::where('id', $id)->get();
+        $kosts = TempatKos::where('id', $id)->sortByDesc("status_promosi")->get();
         return view('listKost')->with('kosts', $kosts);
     }
 
-    public function clustering()
+    public function clustering(Request $request)
     {
         //
-        $kosts = TempatKos::where();
+        // return $request->harga_max;
+
+        if(is_null($request->harga_max)) $request->harga_max=9999999;
+        if(is_null($request->rating_min)) $request->rating_min=0;
+        $kosts = TempatKos::where([
+                                    ['harga', '<=', $request->harga_max],
+                                    ['rating', '>=', $request->rating_min]
+                                    ])->sortByDesc("status_promosi")->get();
         // return ($kosts);
         return view('listKost')->with('kosts', $kosts);
     }
