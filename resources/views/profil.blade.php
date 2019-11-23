@@ -43,17 +43,7 @@
                         </label>
                     </div>
                     <div class="form-group row mb-0">
-                        <div class="col-md-5">
-                        @if (Auth::user()->status == '0')
-                            <span style="float:right">
-                                <a href="/users">
-                                    <button class="btn btn-primary">
-                                        {{ __('List User') }}
-                                    </button>
-                                </a>
-                            </span>
-                        @endif
-                        </div>
+                        <div class="col-md-5"></div>
                         <div class="col-md-5">
                             <span>
                                 <a href="/users/{{$users->id}}/edit">

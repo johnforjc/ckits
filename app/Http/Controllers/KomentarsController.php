@@ -18,7 +18,10 @@ class KomentarsController extends Controller
     {
         // return 'hello ckits';
         $comments = Komentar::all();
-        return view('listComment')->$comments;
+        $users = User::all();
+        $kosts = TempatKos::all();
+
+        return view('listComment')->with('comments', $comments)->with('kosts',$kosts)->with('users',$users);
         //
     }
 
