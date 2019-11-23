@@ -18,10 +18,8 @@ class KomentarsController extends Controller
     {
         // return 'hello ckits';
         $comments = Komentar::all();
-        $users = User::all();
-        $kosts = TempatKos::all();
 
-        return view('listComment')->with('comments', $comments)->with('kosts',$kosts)->with('users',$users);
+        return view('listComment')->with('comments', $comments);
         //
     }
 
@@ -83,7 +81,9 @@ class KomentarsController extends Controller
     {
         //
         $komentar = Komentar::find($id);
-        return view('showDetailKomentar')->with('komentar', $komentar);
+        $users = User::find($komentar->id);
+        $kosts = TempatKos::find($komentar->tempat_kos_id_tempat_kos);
+        return view('showDetailKomentar')->with('komentar', $komentar)->with('users', $users)->with('kosts', $kosts);
     }
 
     /**

@@ -24,6 +24,7 @@ Route::get('/login', function(){
 
 Route::get('komentar/create/{id_kos}', 'KomentarsController@create_manual');
 Route::get('pembayaran/create/{id_kos}', 'PembayaransController@create_manual');
+Route::get('/pembayaran', 'PembayaransController@index');
 Route::post('clus', 'TempatKosController@clustering');
 
 Route::resource('komentar', 'KomentarsController');

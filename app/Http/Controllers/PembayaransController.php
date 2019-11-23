@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pembayaran;
 use App\TempatKos;
 
 class PembayaransController extends Controller

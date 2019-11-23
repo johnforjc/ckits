@@ -6,7 +6,7 @@
     <script type="text/javascript">
         window.location = "/";
     </script>
-@elseif(Auth::user()->status==1)
+@elseif(Auth::user()->status != '2')
     <script type="text/javascript">
         window.location = "/";
     </script>
