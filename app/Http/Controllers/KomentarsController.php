@@ -33,6 +33,7 @@ class KomentarsController extends Controller
     public function create_manual($id_kos)
     {
         $kost=TempatKos::find($id_kos);
+
         return view('tambahkomentar')->with('kost', $kost);
     }
 
@@ -137,17 +138,7 @@ class KomentarsController extends Controller
     public function destroy($id)
     {
         //
-        $komentar = Komentar::find($id);
-        $kost = TempatKos::find($komentar->tempat_kos_id_tempat_kos);
-        $kost->jumlah_komentar=$kost->jumlah_komentar-1;
-        if($kost->jumlah_komentar == 0){
-            $kost->rating = 0;
-        }
-        else{
-            $kost->rating = ($kost->rating*($kost->jumlah_komentar+1)-$komentar->rating)/($kost->jumlah_komentar);
-        }
-        $kost->save();
+        $komentar = TempatKos::find($id);
         $komentar->delete();
-        return redirect('komentar');
     }
 }
