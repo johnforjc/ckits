@@ -67,9 +67,9 @@
                             </div>
 
                             <div class="col-md-4"></div>
-                            <div class="col-md-6">Ketikan 1 jika anda pencari kos</div>
+                            <div class="col-md-6">Ketikan 1 jika anda pencari tempat kos</div>
                             <div class="col-md-4"></div>
-                            <div class="col-md-6">Ketikan 2 jika anda pemilik kos</div>
+                            <div class="col-md-6">Ketikan 2 jika anda pemilik tempat kos</div>
                         </div>
 
                         <div class="form-group row">

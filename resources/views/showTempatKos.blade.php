@@ -55,7 +55,7 @@
                     <div class="col-md-5">
                         <a href="/pembayaran/create/{{$kosts->id_tempat_kos}}">
                             <button class="btn btn-primary">
-                                {{ __('Pendaftaran Promosi Tempat Kos') }}
+                                {{ __('Daftar Promosi Tempat Kos') }}
                             </button>
                         </a>
                     </div>

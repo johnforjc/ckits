@@ -76,6 +76,7 @@
                                 <a class="dropdown-item" href="/users/{{ Auth::user()->id }}">{{ __('Profil') }}</a>
                                 @if (Auth::user()->status == '2')
                                 <a class="dropdown-item" href="/tempatkos/create">{{ __('Pendaftaran Tempat Kos') }}</a>
+                                <a class="dropdown-item" href="/tempatkos/list/{{ Auth::user()->id }}">{{ __('List Tempat Kos Saya') }}</a>
                                 @elseif (Auth::user()->status == '0')
                                 <a class="dropdown-item" href="/users">{{ __('List User') }}</a>
                                 <a class="dropdown-item" href="/komentar">{{ __('List Komentar') }}</a>
