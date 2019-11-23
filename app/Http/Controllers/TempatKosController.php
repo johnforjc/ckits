@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\TempatKos;
 use App\User;
 use App\Komentar;
+use App\Pembayaran;
 
 class TempatKosController extends Controller
 {
@@ -210,6 +211,11 @@ class TempatKosController extends Controller
     {
         //
         $kosts = TempatKos::find($id);
+        $pembayaran = Pembayaran::where('id_tempat_kos', $id)->get();
+        for($i=0; $i<$pembayaran->count(); $i++)
+        {
+            $pembayaran[$i]->delete();
+        }
         $komentar = Komentar::where('tempat_kos_id_tempat_kos', $id)->get();
         for($i=0; $i<$komentar->count(); $i++)
         {

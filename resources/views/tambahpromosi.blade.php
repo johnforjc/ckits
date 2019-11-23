@@ -6,7 +6,7 @@
     <script type="text/javascript">
         window.location = "/";
     </script>
-@elseif(Auth::user()->id != $kost->id)
+@elseif(Auth::user()->id != $kost->id || $kost->status_promosi == 1)
     <script type="text/javascript">
         window.location = "/";
     </script>
