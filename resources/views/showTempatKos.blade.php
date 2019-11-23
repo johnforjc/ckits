@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 @if(Auth::guest())
     <script type="text/javascript">
         window.location = "/";
@@ -57,7 +55,7 @@
                     <div class="col-md-5">
                         <a href="/pembayaran/create/{{$kosts->id_tempat_kos}}">
                             <button class="btn btn-primary">
-                                {{ __('Promosikan Tempat Kos Anda') }}
+                                {{ __('Pendaftaran Promosi Tempat Kos') }}
                             </button>
                         </a>
                     </div>

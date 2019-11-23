@@ -15,6 +15,7 @@
 <h1>List User</h1>
 <table class="table">
     <tr class="tr">
+        <th class="th">ID User</th>
         <th class="th">Nama User</th>
         <th class="th">Email User</th>
         <th class="th">Nomor Telepon</th>
@@ -23,7 +24,8 @@
     </tr>
     @foreach ($users as $user)
     <tr class="tr">
-        <td class="td"><a href="/users/{{ $user->id }}">{{$user->nama_user}}</a></td>
+        <td class="td"><a href="/users/{{ $user->id }}">{{$user->id}}</a></td>
+        <td class="td">{{$user->nama_user}}</td>
         <td class="td">{{$user->email}}</td>
         <td class="td">{{$user->no_telp}}</td>
         <td class="td">

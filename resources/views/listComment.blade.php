@@ -15,6 +15,7 @@
 <h1>List Komentar</h1>
 <table class="table">
     <tr class="tr">
+        <th class="th">ID Komentar</th>
         <th class="th">ID Penyewa Tempat Kos</th>
         <th class="th">ID Tempat Kos</th>
         <th class="th">Rating</th>
@@ -23,6 +24,7 @@
     </tr>
     @foreach ($comments as $comment)   
     <tr class="tr">
+        <td class="td"><a href="/komentar/{{ $comment->id_komentar }}">{{$comment->id_komentar}}</a></td>
         <td class="td"><a href="/users/{{ $comment->id }}">{{$comment->id}}</a></td>
         <td class="td"><a href="/tempatkos/{{ $comment->tempat_kos_id_tempat_kos }}">{{$comment->tempat_kos_id_tempat_kos}}</a></td>
         <td class="td">{{$comment->rating}}</td>
