@@ -115,9 +115,7 @@
                     </div>    
                     @endfor
                 @else
-                <div class="form-group row">
-                    <h6>Tidak ada Komentar ditemukan</h6>
-                </div>
+                    <h6 style="text-align:center">Tidak ada Komentar ditemukan</h6>
                 @endif
             </div>
         </div>
