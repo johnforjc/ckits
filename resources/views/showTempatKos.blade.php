@@ -53,13 +53,15 @@
             </div>
             <div class="form-group row mb-0">
                 @if(Auth::user()->id == $kosts->id)
-                <div class="col-md-5">
-                    <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
-                        <button class="btn btn-primary">
-                            {{ __('Promosikan Tempat Kos Anda') }}
-                        </button>
-                    </a>
-                </div>
+                    @if($kosts->status_promosi == 0)
+                    <div class="col-md-5">
+                        <a href="/pembayaran/create/{{$kosts->id_tempat_kos}}">
+                            <button class="btn btn-primary">
+                                {{ __('Promosikan Tempat Kos Anda') }}
+                            </button>
+                        </a>
+                    </div>
+                    @endif
                 <div class="col-md-5">
                     <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
                         <button class="btn btn-primary">

@@ -24,7 +24,7 @@ class CreateTempatKosTable extends Migration
             $table->string('keterangan_tempat_kos');
             $table->double('rating');
             $table->integer('jumlah_komentar');
-            $tabel->date('expired_promotion')->nullable();
+            $table->date('expired_promotion')->nullable();
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
