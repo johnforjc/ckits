@@ -26,14 +26,14 @@
     </tr>
     @foreach ($payments as $payment)
     <tr class="tr">
-        <td class="td">{{$payment->id_pembayaran}}</a></td>
+        <td class="td">{{$payment->id_pembayaran}}</td>
         <td class="td">{{$payment->id_tempat_kos}}</td>
         <td class="td">{{$payment->valid}}</td>
         <td class="td">{{$payment->jenis_promosi}}</td>
         <td class="td">{{$payment->harga}}</td>
         <td class="td">
             @if({{$payment->foto}} != "no_image.jpg")
-                <img src="/public/valid/{{$payment->foto}}" alt="">
+                <img src="/storage/validation/{{$payment->foto}}" alt="">
             @endif
         </td>
         <td class="td">
