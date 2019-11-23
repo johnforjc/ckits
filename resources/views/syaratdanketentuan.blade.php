@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
 <h1>Syarat dan Ketentuan</h1>
 
 <div class="container">
