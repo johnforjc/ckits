@@ -33,6 +33,4 @@ Route::resource('tempatkos', 'TempatKosController');
 Route::resource('pembayaran', 'PembayaransController');
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/list', 'TempatKosController@index')->name('list');
-// Route::get('/listkostku', 'TempatKosController@index_manual')->name('list');
