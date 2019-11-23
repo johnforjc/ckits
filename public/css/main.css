@@ -124,7 +124,7 @@ a .list-box{
     color: #fff;
 }
 
-.template-kost{
+.template-kost, .template-komentar, .template-user{
     border-radius: 10px;
     /* font-size: 25px; */
     padding: 40px;

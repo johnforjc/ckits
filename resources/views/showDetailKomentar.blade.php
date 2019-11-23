@@ -16,8 +16,8 @@
 <h1>Detail Komentar</h1>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="card-body">
-            <div class="list-komentar-row">
+        <div class="col-md-8">
+            <div class="card-body template-komentar">
                 <div class="form-group row">
                     <label class="col-md-5 col-form-label">Nama User</label>
                     <label class="col-md-5 col-form-label">: {{$users->nama_user}}</label>

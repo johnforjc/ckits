@@ -7,10 +7,10 @@
         window.location = "/";
     </script>
 @else
+<h1>Profil Tempat Kos</h1>
 <div class="container white-font">
     <div class="row justify-content-center">
         <div class="col-md-8">
-        <h1>Profil Tempat Kos</h1>
         <div class="card-body template-kost">
             <img class="template-kos-image col-md-12" src="/storage/image/{{$kosts->foto_kos}}">
             <div class="form-group row">
