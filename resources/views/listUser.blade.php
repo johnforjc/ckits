@@ -28,9 +28,9 @@
                 <td class="td">{{$user->no_telp}}</td>
                 <td class="td">
                     @if ($user->status == '1')
-                        Pencari Kos
+                        Pencari Tempat Kos
                     @elseif ($user->status == '2')
-                        Pemilik Kos
+                        Pemilik Tempat Kos
                     @else
                         Admin
                     @endif

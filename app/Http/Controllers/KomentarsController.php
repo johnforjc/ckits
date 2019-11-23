@@ -106,19 +106,20 @@ class KomentarsController extends Controller
     {
         //
         $this->validate($request, [
-            'komentar' => 'required',
-            'rating' => 'required',
+            'komentar' => 'required'
             //dsb
         ]);
 
         $kost = TempatKos::find($request->id_kost);
         $komentars = Komentar::find($id);
-
-        $kost->rating = ($kost->rating*$kost->jumlah_komentar+($komentars->rating-$request->rating))/($kost->jumlah_komentar);
-        $kost->save();
-
+        
+        if($request->rating){
+            $kost->rating = ($kost->rating*$kost->jumlah_komentar-($komentars->rating-$request->rating))/($kost->jumlah_komentar);
+            $kost->save();
+            $komentars->rating = $request->rating;
+        }
+        
         $komentars->isi_komentar = $request->komentar;
-        $komentars->rating = $request->rating;
         $komentars->save();
 
         return redirect()->route('tempatkos.show', $komentars->tempat_kos_id_tempat_kos); 

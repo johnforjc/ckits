@@ -18,14 +18,14 @@
                 <div class="card-header">{{ __('Ceritakan Pengalamanmu Di Tempat Kos Ini') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ action('KomentarsController@store', $komentars->id_komentar) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ action('KomentarsController@update', $komentar->id_komentar) }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
                             <label for="komentar" class="col-md-4 col-form-label text-md-right">{{ __('Komentar') }}</label>   
 
                             <div class="col-md-6">
-                                <input id="komentar" type="text" class="form-control" name="komentar" value="{{ $komentars->isi_komentar }}" required autofocus>
+                                <input id="komentar" type="text" class="form-control" name="komentar" value="{{ $komentar->isi_komentar }}" required autofocus>
                             </div>
                         </div>
 
@@ -42,6 +42,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        <input type="hidden" name="id_user" value="{{Auth::user()->id}}">
+                        <input type="hidden" name="id_kost" value="{{$komentar->tempat_kos_id_tempat_kos}}">
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

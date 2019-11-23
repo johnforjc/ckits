@@ -33,6 +33,12 @@
                 <label class="col-md-5 col-form-label">Harga</label>
                 <label class="col-md-5 col-form-label">: {{$kosts->harga}}</label>
             </div>
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label">Rating Rata - Rata</label>
+                <label class="col-md-5 col-form-label bintang">:
+                    <label class="output"></label>{{$kosts->rating}}
+                </label>
+            </div>
             @if(Auth::user()->id == $kosts->id)
             <div class="form-group row">
                 <label class="col-md-5 col-form-label">Status Promosi</label>
@@ -45,54 +51,65 @@
             </div>
             <div class="form-group row mb-0">
                 @if(Auth::user()->id == $kosts->id)
-                    <div class="col-md-5">
-                        <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
-                            <button class="btn btn-primary">
-                                {{ __('Promosikan Tempat Kos Anda') }}
-                            </button>
-                        </a>
-                    </div>
-                    <div class="col-md-5">
-                        <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
-                            <button class="btn btn-primary">
-                                {{ __('Edit Tempat Kos') }}
-                            </button>
-                        </a>
-                    </div>
+                <div class="col-md-5">
+                    <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
+                        <button class="btn btn-primary">
+                            {{ __('Promosikan Tempat Kos Anda') }}
+                        </button>
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
+                        <button class="btn btn-primary">
+                            {{ __('Edit Tempat Kos') }}
+                        </button>
+                    </a>
+                </div>
                 @elseif(Auth::user()->status == 1)
-                    <div class="col-md-5 offset-md-5">
-                        <a href="/komentar/create/{{$kosts->id_tempat_kos}}">
-                            <button class="btn btn-primary">
-                                {{ __('Beri Komentar') }}
-                            </button>
-                        </a>
-                    </div>
+                <div class="col-md-5 offset-md-5">
+                    <a href="/komentar/create/{{$kosts->id_tempat_kos}}">
+                        <button class="btn btn-primary">
+                            {{ __('Beri Komentar') }}
+                        </button>
+                    </a>
+                </div>
                 @endif
             </div>
         </div>
     </div>
-
     <div class="row justify-content-center">
         <div class="komentarcontainer">
+            <br>
             <h2 style="text-align:center">Komentar</h2>
             <div class="card-body">
                 @if($kosts->komentar->count() > 0)
                     @for($i=0; $i<$kosts->komentar->count(); $i++)
                     <div class="list-komentar-row">
                         <div class="form-group row">
-                            <label class="col-md-5 col-form-label">Nama</label>
-                            <label class="col-md-5 col-form-label">: {{$data[$i]['nama_user']}}</label>
+                            <label class="col-md-4 col-form-label">Nama</label>
+                            <label class="col-md-6 col-form-label">: {{$data[$i]['nama_user']}}</label>
                         </div>
                         <div class="form-group row">
-                            <label class="col-md-5 col-form-label">Rating</label>
-                            <div class="col-md-5 col-form-label bintang">
+                            <label class="col-md-4 col-form-label">Rating</label>
+                            <label class="col-md-6 col-form-label bintang">:
                                 <label class="output"></label>{{$kosts->komentar[$i]['rating']}}
-                            </div>
+                            </label>
                         </div>
                         <div class="form-group row">
-                            <label class="col-md-5 col-form-label">Komentar</label>
-                            <label class="col-md-5 col-form-label">: {{$kosts->komentar[$i]['isi_komentar']}}</label>
+                            <label class="col-md-4 col-form-label">Komentar</label>
+                            <label class="col-md-6 col-form-label">: {{$kosts->komentar[$i]['isi_komentar']}}</label>
                         </div>
+                        @if (Auth::user()->id == $data[$i]['id'])
+                        <div class="col-md-5 offset-md-4">
+                            <span>
+                                <a href="/komentar/{{$kosts->komentar[$i]['id_komentar']}}/edit">
+                                    <button class="btn btn-primary">
+                                        {{ __('Edit Komentar') }}
+                                    </button>
+                                </a>
+                            </span>
+                        </div>  
+                        @endif
                     </div>    
                     @endfor
                 @else
