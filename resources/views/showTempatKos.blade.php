@@ -30,7 +30,7 @@
                 <label class="col-md-5 col-form-label">: {{$kosts->alamat}}</label>
             </div>
             <div class="form-group row">
-                <label class="col-md-5 col-form-label">Jumlah Kamar</label>
+                <label class="col-md-5 col-form-label">Jumlah Kamar Yang Tersedia</label>
                 <label class="col-md-5 col-form-label">: {{$kosts->kamar_tersedia}}</label>
             </div>
             <div class="form-group row">
@@ -122,15 +122,25 @@
                             <label class="col-md-6 col-form-label">: {{$kosts->komentar[$i]['isi_komentar']}}</label>
                         </div>
                         @if (Auth::user()->id == $data[$i]['id'])
-                        <div class="col-md-5 offset-md-4">
-                            <span>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <form action="{{ action('KomentarsController@destroy', $kosts->komentar[$i]['id_komentar']) }} " method="POST">
+                                    <input type="hidden" name="_method" value="Delete">
+                                    <button type="submit" class="btn btn-danger" value="Delete">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        {{ __('DELETE') }}
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="col-md-5">
                                 <a href="/komentar/{{$kosts->komentar[$i]['id_komentar']}}/edit">
                                     <button class="btn btn-primary">
                                         {{ __('Edit Komentar') }}
                                     </button>
                                 </a>
-                            </span>
-                        </div>  
+                            </div>
+                        </div>
+                          
                         @endif
                     </div>    
                     @endfor

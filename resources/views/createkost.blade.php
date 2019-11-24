@@ -22,7 +22,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama') }}</label>   
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama tempat kos') }}</label>   
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="kamar" class="col-md-4 col-form-label text-md-right">{{ __('Jumlah kamar') }}</label>
+                            <label for="kamar" class="col-md-4 col-form-label text-md-right">{{ __('Jumlah kamar yang tersedia') }}</label>
 
                             <div class="col-md-6">
                                 <input id="kamar" type="text" class="form-control" name="kamar" value="{{ old('kamar') }}" required autocomplete="kamar">

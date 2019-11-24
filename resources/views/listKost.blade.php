@@ -36,7 +36,7 @@
                 <label class="col-md-6 col-form-label">: {{$kost->alamat}}</label>
             </div>
             <div class="form-group row">
-                <label class="col-md-4 col-form-label">{{ __('Jumlah Kamar') }}</label>   
+                <label class="col-md-4 col-form-label">{{ __('Jumlah Kamar Yang Tersedia') }}</label>   
                 <label class="col-md-6 col-form-label">: {{$kost->kamar_tersedia}}</label>
             </div>
             <div class="form-group row">

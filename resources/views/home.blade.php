@@ -51,8 +51,8 @@
                         <img class='list-box-photo' src="/storage/image/{{$kost->foto_kos}}" alt="{{$kost->nama_tempat_kos}}">
                         <div class="list-box-text">
                             <div class="form-group row">
-                                <label class="col-md-4 col-form-label">{{ __('Nama Kos') }}</label>   
-                                <label class="col-md-6 col-form-label">: {{$kost->nama_tempat_kos}}</label>
+                                <label class="col-md-5 col-form-label">{{ __('Nama Tempat Kos') }}</label>   
+                                <label class="col-md-5 col-form-label">: {{$kost->nama_tempat_kos}}</label>
                             </div>
                         </div>
                         </a>
@@ -102,43 +102,5 @@
 
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="footer text-center">
-    <div class="container">
-      <div class="row">
-
-        <!-- Footer Location -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <h4 class="text-uppercase mb-4">Location</h4>
-          <p class="lead mb-0">Rumah Patrick
-            <br>Galaxy Bumi Permai J3-29</p>
-        </div>
-
-        <!-- Footer Social Icons -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-        {{-- kalo butuh teks ditengah --}}
-        </div>
-
-        <!-- Footer About Text -->
-        <div class="col-lg-4">
-            <h4 class="text-uppercase mb-4">Social Media</h4>
-            <a class="btn btn-outline-light btn-social mx-1" href="#">
-              
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#">
-              
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#">
-              
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="#">
-             
-            </a>
-        </div>
-
-      </div>
-    </div>
-  </footer>
 
 @endsection

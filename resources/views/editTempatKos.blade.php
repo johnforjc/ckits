@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="kamar" class="col-md-4 col-form-label text-md-right">{{ __('Jumlah kamar') }}</label>
+                        <label for="kamar" class="col-md-4 col-form-label text-md-right">{{ __('Jumlah kamar yang tersedia') }}</label>
 
                         <div class="col-md-6">
                             <input id="kamar" type="text" class="form-control" name="kamar" value="{{ $kosts->kamar_tersedia }}" required autocomplete="kamar">
