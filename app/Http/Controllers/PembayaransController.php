@@ -31,6 +31,14 @@ class PembayaransController extends Controller
         // return $id_kos;
         $kost=TempatKos::find($id_kos);
         // return $kost;
+        $pembayaran = Pembayaran::where('id_tempat_kos', $id_kos)->get();
+        for($i=0; $i<$pembayaran->count(); $i++)
+        {
+            if($pembayaran[$i]->valid == 0){
+                return redirect()->route('tempatkos.show', $kost->id_tempat_kos);
+            }
+        }
+
         return view('tambahpromosi')->with('kost', $kost);
     }
 
@@ -134,6 +142,12 @@ class PembayaransController extends Controller
     public function destroy($id)
     {
         //
-        
+        $payment = Pembayaran::find($id);
+        $kost=TempatKos::find($payment->id_tempat_kos);
+        $kost->status_promosi = 0;
+        $kost->expired_promotion = NULL;
+        $kost->save();
+        $payment->delete();
+        return redirect()->route('tempatkos.show', $kost->id_tempat_kos);
     }
 }

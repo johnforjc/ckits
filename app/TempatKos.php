@@ -19,6 +19,10 @@ class TempatKos extends Model
         return $this->hasMany('App\Komentar');
     }
 
+    public function pembayaran(){
+        return $this->hasMany('App\Pembayaran');
+    }
+
     public function User(){
         return $this->belongTo('App\User');
     }

@@ -39,22 +39,22 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="kamar" class="col-md-4 col-form-label text-md-right">Upload bukti pembayaran</label>
+                        <label for="kamar" class="col-md-5 col-form-label text-md-right">Upload bukti pembayaran</label>
                     </div>
 
                     <div class="form-group row">
-                        <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
+                        <label for="foto" class="col-md-5 col-form-label text-md-right">{{ __('Foto') }}</label>
 
-                        <div class="col-md-4 btn">
+                        <div class="col-md-5 btn">
                             <input id="foto" type="file" name="foto" value="{{ old('foto') }}">
                         </div>
                     </div>
 
                     <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
+                        <div class="col-md-5 offset-md-5">
                         <input type="hidden" name="_method" value="PUT">
                             <button type="submit" class="btn btn-primary">
-                                {{ __('Edit Tempat Kos') }}
+                                {{ __('Bayar') }}
                             </button>
                         </div>
                     </div>

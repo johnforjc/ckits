@@ -33,7 +33,7 @@
         <td class="td">{{$payment->harga}}</td>
         <td class="td">
             @if($payment->foto != "no_image.jpg")
-                <img src="/storage/validation/{{$payment->foto}}" alt="">
+                <img class="col-md-10" src="/storage/validation/{{$payment->foto}}" alt="">
             @endif
         </td>
         <td class="td">

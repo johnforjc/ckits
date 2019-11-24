@@ -71,15 +71,15 @@
             </div>
             <div class="form-group row mb-0">
                 @if(Auth::user()->id == $kosts->id)
-                    @if($kosts->status_promosi == 0)
                     <div class="col-md-5">
+                    @if($kosts->status_promosi == 0)
                         <a href="/pembayaran/create/{{$kosts->id_tempat_kos}}">
                             <button class="btn btn-primary">
                                 {{ __('Daftar Promosi Tempat Kos') }}
                             </button>
                         </a>
-                    </div>
                     @endif
+                    </div>
                 <div class="col-md-5">
                     <a href="/tempatkos/{{$kosts->id_tempat_kos}}/edit">
                         <button class="btn btn-primary">
