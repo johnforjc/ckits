@@ -22,6 +22,10 @@
                 <label class="col-md-5 col-form-label">: {{$users->nama_user}}</label>
             </div>
             <div class="form-group row">
+                <label class="col-md-5 col-form-label">Nomor Telepon Pemilik Tempat Kos</label>
+                <label class="col-md-5 col-form-label">: {{$users->no_telp}}</label>
+            </div>
+            <div class="form-group row">
                 <label class="col-md-5 col-form-label">Alamat</label>
                 <label class="col-md-5 col-form-label">: {{$kosts->alamat}}</label>
             </div>
@@ -39,10 +43,26 @@
                     <label class="output"></label>{{$kosts->rating}}
                 </label>
             </div>
-            @if(Auth::user()->id == $kosts->id)
+            @if(Auth::user()->id == $kosts->id || Auth::user()->status == 0)
             <div class="form-group row">
                 <label class="col-md-5 col-form-label">Status Promosi</label>
-                <label class="col-md-5 col-form-label">: {{$kosts->status_promosi}}</label>
+                <label class="col-md-5 col-form-label">
+                @if($kosts->status_promosi == 1)
+                    : Terdaftarkan
+                @else
+                    : Tidak Terdaftar
+                @endif
+                </label>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label">Promosi Berlaku Sampai</label>
+                <label class="col-md-5 col-form-label">
+                @if($kosts->expired_promotion)
+                    : {{$kosts->expired_promotion}}
+                @else
+                    : Tidak Ada
+                @endif
+                </label>
             </div>
             @endif
             <div class="form-group row">

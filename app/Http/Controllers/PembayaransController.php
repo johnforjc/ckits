@@ -48,7 +48,8 @@ class PembayaransController extends Controller
     {
         //
         $this->validate($request, [
-            'promosi' => 'required'
+            'promosi' => 'required',
+            'syarat' => 'required'
         ]);
 
         $payment = new Pembayaran;
@@ -96,7 +97,6 @@ class PembayaransController extends Controller
     public function update(Request $request, $id)
     {
         //
-        // return $id;
         $payment = Pembayaran::find($id);
         $kost=TempatKos::find($payment->id_tempat_kos);
 
@@ -134,5 +134,6 @@ class PembayaransController extends Controller
     public function destroy($id)
     {
         //
+        
     }
 }

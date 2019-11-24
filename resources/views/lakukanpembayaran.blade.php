@@ -21,7 +21,7 @@
                 <div class="card-header">{{ __('Lakukan Pembayaran') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ action('PembayaransController@update', $payment->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ action('PembayaransController@update', $payment->id_pembayaran) }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group row">
@@ -30,12 +30,12 @@
 
                     <div class="form-group row">
                         <label class="col-md-6 col-form-label">Nama Tempat Kos</label>
-                        <label class="col-md-6 col-form-label">{{ $kost->nama_tempat_kos }}</label>
+                        <label class="col-md-6 col-form-label">: {{ $kost->nama_tempat_kos }}</label>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-md-6 col-form-label">Harga</label>
-                        <label class="col-md-6 col-form-label">{{ $payment->harga }}</label>
+                        <label class="col-md-6 col-form-label">: {{ $payment->harga }}</label>
                     </div>
 
                     <div class="form-group row">

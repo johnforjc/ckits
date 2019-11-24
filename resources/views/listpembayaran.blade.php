@@ -32,14 +32,15 @@
         <td class="td">{{$payment->jenis_promosi}}</td>
         <td class="td">{{$payment->harga}}</td>
         <td class="td">
-            @if({{$payment->foto}} != "no_image.jpg")
+            @if($payment->foto != "no_image.jpg")
                 <img src="/storage/validation/{{$payment->foto}}" alt="">
             @endif
         </td>
         <td class="td">
-            <form action="{{ action('TempatKosController@show', $payment->id_tempat_kos) }} " method="POST">
-                <input type="hidden" name="_method" value="Validasi">
-                <button type="submit" class="btn btn-primary" value="Validasi">
+            <form action="{{ action('PembayaransController@update', $payment->id_pembayaran) }} " method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <button type="submit" class="btn btn-primary">
+                    <input type="hidden" name="valid" value="1">    
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     {{ __('Validasi') }}
                 </button>
