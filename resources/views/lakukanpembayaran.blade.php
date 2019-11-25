@@ -29,12 +29,12 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-md-6 col-form-label" style="padding-left: 20rem">Nama Tempat Kos</label>
+                        <label class="col-md-6 col-form-label">Nama Tempat Kos</label>
                         <label class="col-md-6 col-form-label">: {{ $kost->nama_tempat_kos }}</label>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-md-6 col-form-label" style="padding-left: 20rem">Harga</label>
+                        <label class="col-md-6 col-form-label">Harga</label>
                         <label class="col-md-6 col-form-label">: {{ $payment->harga }}</label>
                     </div>
 

@@ -53,18 +53,6 @@
                 <label class="col-md-4 col-form-label">{{ __('Keterangan') }}</label>   
                 <label class="col-md-6 col-form-label">: {{$kost->keterangan_tempat_kos}}</label>
             </div>
-            @if(Auth::user()->id == $kost->id || Auth::user()->status == 0)
-            <div class="form-group row">
-                <label class="col-md-5 col-form-label"></label>
-                <form action="{{ action('TempatKosController@destroy', $kost->id_tempat_kos) }} " method="POST">
-                    <input type="hidden" name="_method" value="Delete">
-                    <button type="submit" class="btn btn-danger" value="Delete">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        {{ __('DELETE') }}
-                    </button>
-                </form>
-            </div>
-            @endif
         </div>
     </div>
     </a> 

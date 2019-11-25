@@ -42,7 +42,7 @@
             @foreach ($kosts as $kost) 
                 <div class="col-md-6 col-lg-4">
                     <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                        <a href="tempatkos/{{$kost->id_tempat_kos}}">
+                        <a href="/tempatkos/{{$kost->id_tempat_kos}}">
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                           <div class="portfolio-item-caption-content text-center text-white">
                               <img class="masthead-avatar mb-0" src="img/portfolio/arrow.png" alt="" style="width:100px">
