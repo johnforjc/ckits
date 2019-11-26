@@ -36,7 +36,6 @@
       </div>
     <!-- Portfolio Grid Items -->
     <div class="row">
-
         <!-- Portfolio Item 1 -->
         @if($kosts->count() > 0)
             @foreach ($kosts as $kost) 
@@ -61,7 +60,6 @@
             @endforeach
         @endif
         <!-- /.row -->
-
     </div>
     <div class="text-center mt-4">
         <a class="btn btn-xl btn-outline-light" href="{{ route('list') }}">
