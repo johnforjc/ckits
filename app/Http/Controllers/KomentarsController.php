@@ -48,7 +48,6 @@ class KomentarsController extends Controller
      */
     public function store(Request $request)
     {
-        //tinggal diubah
         $this->validate($request, [
             'komentar' => 'required',
             'rating' => 'required',
@@ -127,7 +126,7 @@ class KomentarsController extends Controller
         $komentars->save();
 
         return redirect()->route('tempatkos.show', $komentars->tempat_kos_id_tempat_kos); 
-}
+    }
 
     /**
      * Remove the specified resource from storage.

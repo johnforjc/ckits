@@ -101,7 +101,6 @@ class TempatKosController extends Controller
 
         //
         return redirect()->route('tempatkos.show', $kosts->id_tempat_kos);
-        // return view('showTempatKos')->with('kosts', $kosts);
     }
 
     /**
@@ -115,25 +114,14 @@ class TempatKosController extends Controller
         //
         $kosts = TempatKos::find($id);
         $users = User::find($kosts->id);
-        // $users->komentar::where('tempat_kos_id_tempat_kos', $id)->get(); 
-        // return $users;
 
-        //cara fandi
         $komentar = Komentar::where('tempat_kos_id_tempat_kos', $id)->get();
         $data = array();
         for($i=0; $i<$komentar->count(); $i++)
         {
             array_push($data, User::find($komentar[$i]->id));
         }
-        // return $komentar;
-        // return $data;
-
-        // // Cara 2 model
-        // $komentar = Komentar::where('tempat_kos_id_tempat_kos', $id)->get();
-        // return $komentar;
         return view('showTempatKos')->with('kosts', $kosts)->with('data', $data)->with('users', $users);
-        // ->with('komentar', $komentar);
-        // return view('showTempatKos')->with('data', ['kosts' => $kosts, 'komentar' => $komentar]);
     }
 
     /**
